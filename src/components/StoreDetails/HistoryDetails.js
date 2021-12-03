@@ -87,12 +87,12 @@ const HistoryDetails = ({ assetDetailsVisibility, data}) => {
                                     {data.status}
                                 </TableCell>
                                 <TableCell>
-                                {data.proposedInstallationDate != null ? moment(data.proposedInstallationDate).format("MM/DD/YYYY"): data.proposedInstallationDate}
+                                {data.proposedInstallationDate != null && data.proposedInstallationDate != "0001-01-01T00:00:00" ? moment(data.proposedInstallationDate).format("MM/DD/YYYY"): ""}
 
                                     {/* {data.proposedInstallationDate} */}
                                 </TableCell>
                                 <TableCell>
-                                {data.actualInstallationDate != null ? moment(data.actualInstallationDate).format("MM/DD/YYYY"): data.actualInstallationDate}
+                                {data.actualInstallationDate != null && data.actualInstallationDate != "0001-01-01T00:00:00" ? moment(data.actualInstallationDate).format("MM/DD/YYYY"): ""}
 
                                     {/* {data.actualInstallationDate} */}
                                 </TableCell>
