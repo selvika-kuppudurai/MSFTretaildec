@@ -1,0 +1,15 @@
+
+
+.card__container {
+    height: 100px;
+    border: 1px solid $light-grey;
+    // border-radius: 5%;
+    background-color: $white;
+    margin-top: 1rem;
+    width: 70%;
+    margin-left: 0;
+    margin-right: 0;
+    width: 20%;
+    border-top: 5px solid blue;
+    cursor: pointer;
+}

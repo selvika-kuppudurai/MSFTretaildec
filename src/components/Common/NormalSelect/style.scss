@@ -1,0 +1,30 @@
+@import "../../../assets/scss/abstracts/abstracts-dir.scss";
+.form-group {
+  .select-form-control {
+    // background-image: url("../../../assets/images/svg/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: 90%;
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.4rem !important;
+   
+    &:focus {
+      border: 1px solid #e8e8e8;
+    }
+  }
+}
+.inner-page.Hcp {
+  .form-group .select-form-control {
+    background-image: none;
+  }
+}
+
+.slot-disabled {
+  color: lightgrey;
+}
+
+// .MuiInputLabel-shrink {
+//   transform: translate(0, 24px) scale(1) !important;
+//   transform-origin: top left;
+// }

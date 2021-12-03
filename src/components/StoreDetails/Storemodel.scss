@@ -1,0 +1,65 @@
+.ant-modal-title {
+  color: #0078d4 !important;
+  font-size: 18px !important;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ant-modal-body {
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+.columncolor {
+  color: #666666 !important;
+}
+.text-align {
+  text-align: center !important;
+}
+
+.addstore__modal {
+  .ant-modal {
+    width: 50%;
+  }
+}
+
+.store__modal--input{
+  .MuiTextField-root{
+    width: 100% !important;
+  }
+  .MuiInputBase-input{
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .addstore__modal {
+    .ant-modal {
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .store__modal--btns {
+    width: 100% !important;
+    .btn {
+      font-size: 1.1rem !important;
+      white-space: nowrap !important;
+    }
+  }
+
+  .store__modal--info {
+    font-size: 1.1rem;
+  }
+
+  .store__modal--err {
+    font-size: 1.2rem;
+    .text-align {
+      font-size: 1.2rem;
+    }
+  }
+
+  .store__modal {
+    .retailer__details div {
+      font-size: 1.2rem !important;
+    }
+  }
+}

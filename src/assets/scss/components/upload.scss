@@ -1,0 +1,16 @@
+.upload__container {
+  &--box {
+    position: relative;
+    display: flex;
+
+    input {
+      padding-left: 2.2rem;
+    }
+
+    span {
+      position: absolute;
+      top: 8px;
+      left: 5px;
+    }
+  }
+}

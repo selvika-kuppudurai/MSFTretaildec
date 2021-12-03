@@ -1,0 +1,259 @@
+@media only screen and (max-width: 361px) {
+  .image-upload-fixture {
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+  }
+  .btn_Fixture_And_Inst {
+    flex-wrap: wrap;
+    justify-content: flex-end !important;
+    font-size: 14px;
+    font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+    // text-align: center !important;
+  }
+  .btn_Con_Fixture_And_Inst {
+    justify-content: flex-end !important;
+  }
+  .previous {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+.MuiButton-root {
+  min-width: 90px !important;
+}
+
+.datepickerlabel {
+  font-size: 13px;
+  margin-bottom: 0px !important;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: 600;
+
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.maxwidthformaterialdatepicker {
+  width: 8% !important;
+  .MuiInputLabel-animated {
+    font-size: 12px !important;
+    //   transform: translate(0, 1.5px) scale(0.75);
+    // transform-origin: top left;
+  }
+  .MuiInputLabel-shrink {
+    transform: translate(0, 1.5px) scale(0.75);
+    transform-origin: top left;
+  }
+  .MuiFormControl-marginNormal {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    width: 100% !important;
+  }
+}
+
+.maxwidthformaterial {
+  .MuiFormControl-root {
+    min-width: 80% !important;
+  }
+}
+
+.prev__asset {
+  label {
+    font-size: 13px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.maxwidthformaterial {
+  width: 9% !important;
+}
+
+.maxwidthformaterialdesc {
+  width: 12% !important;
+  .MuiFormControl-root {
+    min-width: 90% !important;
+  }
+}
+
+.add__icon,
+.delete__icon {
+  font-size: 1.3em !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .floorplan__form {
+    label {
+      font-size: 1.2rem;
+    }
+    
+  }
+}
+
+.commonforall{
+  .MuiDialog-paperWidthSm{
+    max-width: 101% !important;
+    width: 76%;
+    }
+    .MuiDialog-paper{
+      overflow-x: hidden !important;
+    }
+    .MuiDialogContent-root{
+      overflow-x: hidden !important;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+  .MuiInputBase-input {
+    // width: 6rem !important;
+    font-size: 13px !important;
+  }
+
+  .ant-picker {
+    width: 9rem;
+  }
+
+  .fixture__installer {
+    .materialModal:hover{
+      overflow: visible;
+    }
+    .MuiInputBase-input {
+      width: 6rem !important;
+      font-size: 13px !important;
+    }
+    .MuiTableCell-root {
+      padding: 12px !important;
+    }
+    table {
+      margin-left: 0 !important;
+
+      .MuiTableCell-body {
+        text-align: left !important;
+      }
+      .MuiTableCell-stickyHeader {
+        background-color: #eaeaea !important;
+        color: #333333 !important;
+        width: 10% !important;
+      }
+      .MuiSelect-selectMenu {
+        width: 7rem !important;
+        padding-left: 0 !important;
+      }
+
+      .materialModal {
+        width: 6rem !important;
+        padding-left: 0 !important;
+      }
+
+      .materialDesc {
+        max-width: 13rem !important;
+      }
+    }
+
+    // .makeStyles-container-2 {
+    //   max-height: 88rem !important;
+    // }
+    .MuiTableContainer-root{
+      max-height: 88rem !important;
+    }
+  }
+  .ant-picker-input {
+    input {
+      font-size: 1.3rem !important;
+    }
+  }
+}
+
+.add__asset {
+  button {
+    color: #fff;
+    font-size: 13px;
+    background-color: #0079c0;
+  }
+  .MuiButton-contained:hover {
+    background-color: #0079c0 !important;
+  }
+}
+
+.add__asset_save {
+  button {
+    color: #fff;
+    font-size: 13px;
+    background-color: green;
+  }
+  .MuiButton-contained:hover {
+    background-color: green !important;
+  }
+}
+
+.add__asset__cancel {
+  button {
+    color: #fff;
+    font-size: 13px;
+    background-color: #a6a6a6;
+  }
+  .MuiButton-contained:hover {
+    background-color: #a6a6a6 !important;
+  }
+}
+.fixture__installer {
+  table {
+    th {
+      font-size: 1.185rem !important;
+    }
+  }
+  .MuiInputBase-input {
+    font-size: 14px !important;
+  }
+
+  .materialDesc {
+    .MuiSelect-selectMenu {
+      height: auto;
+      width: 110px !important;
+      overflow: hidden;
+      /* min-height: 0.1876em; */
+      white-space: nowrap;
+      text-overflow: ellipsis !important;
+    }
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.textarea__box {
+  textarea {
+    color: #495057;
+    padding-left: 1rem;
+  }
+
+  .text__remain {
+    color: red;
+    font-size: 13px;
+  }
+}
+
+.headingfontsize{
+  font-size: 16px;
+}
+
+.imagescontent{
+  font-size: 16px;
+  margin-left: 5%;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

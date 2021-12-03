@@ -1,0 +1,64 @@
+.store__modal {
+  &--title {
+    color: $black;
+  }
+
+  &--input {
+    width: 80%;
+
+    input {
+      font-size: 1.8rem;
+    }
+
+    &-err {
+      border-bottom-color: red;
+    }
+  }
+
+  &--info {
+    color: #007bff;
+  }
+
+  &--err {
+    color: red;
+  }
+
+  &--btns {
+    width: 80%;
+    &-cancel {
+      background-color: $dark-grey !important;
+      color: $white !important;
+      border: none !important;
+      border-radius: 5px !important;
+      font-size: 14px;
+      min-width: 140px !important;
+    }
+
+    &-edit {
+      background-color: #007bff !important;
+      color: $white !important;
+      border: none !important;
+      border-radius: 5px !important;
+      font-size: 14px;
+      min-width: 140px !important;
+      
+    }
+    .btn {
+      font-size: 1.4rem;
+    }
+  }
+
+  .retailer__details {
+    span {
+      color: #007bff;
+    }
+
+    div {
+      display: flex;
+      color: #0078d4;
+      font-size: 14px;
+      font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      // justify-content: space-between;
+    }
+  }
+}

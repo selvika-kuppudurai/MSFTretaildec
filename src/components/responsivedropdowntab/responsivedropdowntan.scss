@@ -1,0 +1,19 @@
+.tabdesignfordropdown{
+    // background-color: #fff !important;
+    .MuiTab-textColorPrimary.Mui-selected {
+        
+        border-radius: 5px;
+    }
+    .MuiTab-wrapper {
+        font-size: 15px !important;
+         }
+    .MuiAppBar-colorDefault {
+            color: rgba(0, 0, 0, 0.87);
+            background-color: #fff !important; 
+        }
+
+        .MuiTab-root{
+            min-width: 40px !important;
+            font-size: 1px !important;
+        }
+}

@@ -1,0 +1,55 @@
+$font-OpenSans: "Poppins", "sans-serif" !important;
+$font-size: 62.5%;
+
+$white: #fff;
+$black: #000;
+$grey: #f4f4f4;
+$light-grey: #00000075;
+$dark-grey: #a9a9a9;
+$blue: #567df4;
+$c2: #494949;
+
+.text-black {
+  color: $black;
+}
+
+/* Color */
+$myColors: (
+  // "c1": $blue,
+  // "c2": $c2,
+  // "c3": $c3,
+  // "c4": $c4,
+  // "c5": $c5,
+  // "c6": $c6,
+  // "c7": $c7,
+  // "c8": $c8,
+  // "c9": $c9,
+  // "c10": $c10,
+  // "c11": $c11,
+  // "c12": $c12,
+  // "c13": $c13,
+  // "c14": $c14,
+  // "c15": $c15,
+  // "c16": $c16,
+  // "c17": $c17,
+  // "c18": $c18,
+);
+
+// @each $name, $colors in $myColors {
+//   $index: index($myColors, $colors);
+//   .text-#{$name} {
+//     color: $colors;
+//   }
+//   .text-h-#{$name} {
+//     color: $colors;
+//   }
+//   .bg-#{$name} {
+//     background-color: $colors;
+//   }
+//   .bg-h-#{$name} {
+//     background-color: $colors;
+//   }
+//   .bc-#{$name} {
+//     border-color: $colors;
+//   }
+// }

@@ -1,0 +1,74 @@
+
+.buttondesignforpending{
+   
+    border-radius: 5px;
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width: 992px) {
+    width: 10%;
+    font-size: 18px;
+    // font-weight: 600;
+        // background-color: pink;
+      }
+      @media only screen and (min-width: 360px) and (max-width: 768px) {
+        font-size: 12px;
+        width: 38%;
+    }
+    justify-content: center;
+    
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+p{
+    margin-top: 1rem;
+    margin-bottom: 1rem !important;
+}
+}
+
+.icondesign{
+    font-weight: lighter;
+    height: 15px !important;
+}
+
+.add__asset__reject {
+    button {
+        background-color: #ffb3b3;
+        color: #ff1a1a;
+        border: 1px solid #ff1a1a;
+        font-size: 14px;
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        
+     
+    }
+    .MuiButton-contained:hover {
+      background-color: #ffb3b3 !important;
+  }
+  }
+  .add__asset__approve {
+    button {
+        background-color: #C1E1C1 !important;
+        color: #28a745 !important;
+        border: 1px solid #28a745 !important;
+        font-size: 14px;
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        
+     
+    }
+    .MuiButton-contained:hover {
+      background-color: #C1E1C1 !important;
+  }
+  }
+.buttondesignforpendingtab{
+
+width: 100px;
+cursor: pointer;
+height: 35px;
+border-radius: 5px;
+}
+
+.tableheaderdesign  {
+    .MuiTableHead-root{
+        background-color: #0079c0 !important;
+    }
+    .MuiTableCell-stickyHeader {
+        text-align: center;
+        border-top: 1px solid #e0e0e0 !important;
+    }
+}

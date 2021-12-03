@@ -1,0 +1,122 @@
+.filter {
+    padding-right: 0em !important;
+    padding-bottom: 1em;
+    padding-left: 5px !important;
+    background-color: $white;
+    box-shadow: 0 5px 5px rgba(0,0,0,.12);
+    font-size: 1.4rem;
+    max-width: 100% !important;
+    // margin-left: 2%;
+    border-radius: 5px;
+
+
+    @media (max-width:768px) {
+        flex-wrap: wrap;
+    }
+
+    
+
+    .filter__width {
+        width: 13%;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        @media(max-width:768px) {
+            width: 20%;
+            margin-top: 1.3rem;
+        }
+
+        @media(max-width:560px) {
+            width: 27%;
+
+        }
+    
+        .select-form-control {
+            font-size: 1.4rem !important;
+        }
+
+        @media (max-width:768px) {
+            .select-form-control {
+                font-size: 1rem !important;
+            }
+
+            .filter__width { 
+                width: 10%;
+                
+            }
+        }
+    }
+
+    label {
+        @media only screen and (min-width: 770px) and (max-width: 910px) {
+            font-weight: normal !important;
+            margin-left: 0px !important;
+        }
+        @media only screen and (min-width: 300px) and (max-width: 600px)  {
+            font-weight: normal !important;
+            margin-left: 0px !important;
+        }
+        font-weight: bold;
+        margin-left: 5px;
+    text-align: end;
+    }
+
+    .dropdowndesign {
+        // @media only screen and (min-width: 360px) and (max-width: 768px) {
+        //     font-size: 10px;
+        // }
+        // @media only screen and (min-width : 1165px) {
+        //    
+        //     // background-color: pink;
+        //   }
+        //   @media only screen and (min-width: 1045px) and (max-width: 1165px) {
+        //     font-size: 14px;
+        // }
+        // @media only screen and (min-width: 940px) and (max-width: 1045px) {
+        //     font-size: 12px;
+        // }
+
+        // @media only screen and (min-width: 768px) and (max-width: 940px) {
+        //     font-size: 10px;
+        // }
+
+        @media only screen and (min-width: 1240px) and (max-width: 1330px) {
+            font-size: 15px !important;
+        }
+          @media only screen and (min-width: 1175px) and (max-width: 1240px) {
+            font-size: 14px;
+        }
+        @media only screen and (min-width: 1040px) and (max-width: 1174px) {
+            font-size: 12px;
+        }
+        @media only screen and (min-width: 970px) and (max-width: 1039px) {
+            font-size: 11px;
+        }
+        @media only screen and (min-width: 840px) and (max-width: 970px) {
+            font-size: 10px;
+        }
+        @media only screen and (min-width: 770px) and (max-width: 840px) {
+            font-size: 9px;
+        }
+        @media only screen and (min-width: 300px) and (max-width: 770px) {
+            font-size: 12px;
+
+
+          }
+        font-size: 16px;
+        
+    color: #666666;
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+
+    }
+
+    .MuiInputLabel-formControl{
+        // color: #21386c !important;
+        font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #21386c !important;
+    
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    
+    }
+}

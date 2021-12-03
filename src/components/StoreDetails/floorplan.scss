@@ -1,0 +1,29 @@
+.btn_Fixture_And_Inst {
+  flex-wrap: wrap;
+  justify-content: flex-end !important;
+  font-size: 14px;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // text-align: center !important;
+}
+.btn_Con_Fixture_And_Inst {
+  justify-content: flex-end !important;
+}
+
+.floorplan__form {
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column !important;
+  }
+}
+.icon_color_white {
+  color: #fff;
+  filter: invert(10);
+}
+
+@media only screen and (max-width: 600px) {
+  .floor__plan {
+    label {
+      font-size: 1.2rem;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.borderdesign{
+    margin-right: 0px !important;
+}
+
+.paddingnone{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.widthforcharts-49{
+    @media only screen and (min-width : 992px) {
+        max-width: 49% !important;
+        // background-color: pink;
+      }
+    
+}

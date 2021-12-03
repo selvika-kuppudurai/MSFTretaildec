@@ -1,0 +1,64 @@
+.MuiPaper-elevation1 {
+  box-shadow: none !important;
+}
+
+.Headerfontdesign {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.MuiTableCell-stickyHeader {
+  background-color: #106ebe !important;
+  @media only screen and (min-width: 960px) and (max-width: 360px) {
+    font-size: 13px;
+    text-align: center;
+    // background-color: green;
+  }
+  @media (min-width: 990px) {   
+    // font-size: 1.5rem;
+    font-size: 16px !important;
+  }
+  
+  font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  //    color: blanchedalmond;
+}
+
+.MuiTableCell-head {
+  color: #ffffff !important;
+}
+
+.MuiTableRow-root.MuiTableRow-hover:hover {
+  background-color: #b8d7f2 !important;
+  color: black !important;
+}
+
+.table-container {
+  position: relative;
+  min-height: 200px;
+
+  .table__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.table-parent {
+  // min-height: 200px;
+  .table__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.tabledesignforfixtureManage {
+  position: relative;
+
+  .table__center {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+  }
+}

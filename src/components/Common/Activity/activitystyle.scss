@@ -1,0 +1,56 @@
+
+.buttondesignforactivity{
+    background-color: #3f51b5;
+   
+    color: #ffffff;
+    border: 1px solid #3f51b5;
+    border-radius: 5px;
+    @media only screen and (min-width: 992px) {
+        width: 10%;
+            // background-color: pink;
+          }
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+p{
+    margin-top: 1rem;
+    margin-bottom: 1rem !important;
+}
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.colorchange{
+    background-color:  #666666 !important; 
+}
+
+.tableheaderdesignforactivity  {
+    .MuiTableHead-root{
+        background-color: #0079c0 !important;
+    }
+    .MuiTableContainer-root {
+        width: 70%;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    .MuiTableCell-stickyHeader {
+        text-align: center;
+        border-top: 1px solid #e0e0e0 !important;
+    }
+}
+
+.approveddesign{
+    p{
+    color: green !important;
+    margin-bottom: 0px !important;
+    font-weight: 600;
+}
+}
+.rejectdesign{
+    p{
+        color: red !important;
+        margin-bottom: 0px !important;
+        font-weight: 600;
+    }
+}

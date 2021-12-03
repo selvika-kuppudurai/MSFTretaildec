@@ -1,0 +1,40 @@
+.navigation {
+    width: 96% !important;
+    font-size: 20px;
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    cursor: pointer;
+    
+
+    &__icon {
+        margin-right: .5rem;
+    }
+
+    .normal__link {
+        font-size: 1.6rem;
+        color: $black;
+    }
+
+    .icon__clr {
+        color: #106ebe;
+       
+      }
+
+    &__link {
+        font-size: 1.6rem;
+        margin-right: 1rem;
+        padding-left: .7rem;
+        color: $blue;
+        font-weight: 600;
+        display: contents;
+    }
+    .MuiTab-wrapper {
+        width: 100%;
+        display: contents !important;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .MuiTab-labelIcon {
+        min-height: 48px !important;
+    }
+}

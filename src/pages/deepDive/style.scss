@@ -1,0 +1,298 @@
+// .backgrounddesign {
+//   background-color: #fff;
+// }
+
+.Headerfontdesign {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #21386c;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.asset__link {
+  a {
+    font-size: 1.4rem;
+    text-decoration: underline !important;
+    font-weight: bold;
+  }
+}
+
+.storedetailstabledesign {
+  background: white;
+  /* margin: 1%; */
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.12);
+  // box-shadow: 0 5px 5px rgba(0,0,0,.12),0 5px 5px rgba(0,0,0,.14), 0 5px 5px rgba(0,0,0,.12) !important;
+}
+.react-pdf__Page__canvas {
+  display: block;
+  user-select: none;
+  width: 100% !important;
+  height: 46vh !important;
+  border-radius: 5px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.12);
+}
+
+.react-pdf__Page__annotations.annotationLayer {
+  padding: 0px !important;
+}
+
+
+
+.react-pdf__Page__textContent {
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  left: -80% !important;
+  // height: 0px !important;
+  top: 0 !important
+}
+
+// hr {
+//   border-top: 2px dotted #3f51b5;
+// }
+
+// button {
+//   margin-right: 10px;
+//   background: #3f51b5;
+//   color: white;
+//   border: none;
+//   padding: 5px 10px;
+//   width: 100px;
+//   cursor: pointer;
+//   box-shadow: 2px 2px 2px 1px #ccc;
+// }
+
+// /* For pdf */
+// .react-pdf__Page {
+//   margin-top: 10px;
+// }
+// .react-pdf__Page__textContent {
+//   border: 1px solid darkgrey;
+//   box-shadow: 5px 5px 5px 1px #ccc;
+//   border-radius: 5px;
+// }
+
+// .react-pdf__Page__annotations.annotationLayer {
+//   padding: 20px;
+// }
+
+// .react-pdf__Page__canvas {
+//   margin: 0 auto;
+// }
+
+// /* For all pages */
+// .all-page-container {
+//   height: 100%;
+//   max-height: 500px;
+//   overflow: auto;
+// }
+
+.retailcontaincard {
+  background-color: #fff;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.12);
+  padding: 1%;
+  h2 {
+    margin-left: 1%;
+    margin-bottom: 0px;
+    color: #666666;
+  }
+  p {
+    margin-bottom: 0 !important;
+  }
+  
+  .retailheader{
+    font-weight: 600;
+    font-size: 16px;
+    color: #106ebe;
+    font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+}
+.textalignend{
+  text-align: end;
+}
+.textaligncenter{
+  @media only screen and (max-width : 770px) {
+    text-align: left !important;
+  }
+  text-align: center;
+}
+.storedetaildesign {
+  color: #a6a6a6;
+  margin-left: 10px;
+  font-size: 1.75rem;
+}
+.highlightedtablerowdesign {
+  background-color: #b8d7f2;
+  .MuiTableRow-root.MuiTableRow-hover:hover {
+    background-color: #5b5d5f !important;
+    color: black !important;
+  }
+}
+
+.retailercardinsidedesign {
+    display: flex;
+
+  p {
+    color: #106ebe;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+    line-height: unset !important;
+  }
+}
+
+.retailercardheader {
+  margin-left: 5px;
+  color: #106ebe;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.retailercardContent {
+  margin-left: 5px;
+  color: #a6a6a6 !important;
+  font-size: 15px !important;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: auto;
+}
+
+
+.storedetailcarddesign{
+  background-color: #fff;
+  margin-top: 1rem;
+ /* Small Devices, Tablets */
+ @media only screen and (min-width: 360px) and (max-width: 768px) {
+  width: 49% !important;
+}
+ /* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  max-width: 19% !important;
+}
+
+/* Small Devices */
+@media (min-width: 576px){
+  max-width: 19% !important;
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  max-width: 19% !important;
+}
+}
+.storedetailcarddesign_col-lg-1{
+  background-color: #fff;
+  margin-top: 1rem;
+ /* Small Devices, Tablets */
+ @media only screen and (min-width: 360px) and (max-width: 768px) {
+  width: 49% !important;
+}
+ /* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  max-width: 19% !important;
+}
+
+/* Small Devices */
+@media (min-width: 576px){
+  max-width: 19% !important;
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  max-width: 5% !important;
+}
+}
+.imgwidthfordeepdive {
+  width: 30px;
+}
+
+.widthforglid {
+  width: 10%;
+}
+
+.contentenddesign {
+  justify-content: end;
+}
+.widthforcity {
+  width: 7%;
+}
+.widthforregion {
+  width: 9%;
+}
+
+.widthforcountry {
+  width: 10%;
+}
+
+.iconcolor{
+  color: #fff;
+}
+
+.widthforretailer {
+  width: 9%;
+}
+
+.widthforstorename {
+  width: 12%;
+}
+
+.widthforstate {
+  width: 8%;
+}
+
+.widthforaddress {
+  width: 18%;
+}
+
+.widthforzip {
+  width: 7%;
+}
+
+.widthforassettagid {
+  width: 4%;
+}
+
+.columncolorfordeepdive {
+  color: #106ebe !important;
+}
+
+
+
+.alignmentdesign {
+  font-size: 14px;
+  line-height: initial;
+}
+
+.addstoreimgdesign {
+  width: 130px;
+  border-radius: 5px;
+}
+
+// /* For all pages */
+// .all-page-container {
+//   height: 100%;
+//   max-height: 500px;
+//   overflow: auto;
+// }
+
+.fontsize_14px{
+  font-size: 14px !important;
+}
+
+.MuiDialog-paperWidthSm{
+max-width: 60% !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .store__btn {
+    .btn {
+      font-size: 12px !important;
+    }
+  }
+}

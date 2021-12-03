@@ -1,0 +1,45 @@
+.approvalsdesignforpending
+{
+    .MuiPaper-root{
+    border-left: 1px solid #6666 !important;
+    padding-left: 10px !important;
+}
+.MuiPaper-rounded {
+    border-radius: 0px !important;
+}
+
+
+}
+
+.react-tabs__tab-list_approvals{
+    
+    flex-direction: column;
+        @media only screen and (min-width: 360px) and (max-width: 768px) {
+          width: 50px !important;
+          // background-color: green;
+        }
+      margin: 0;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      color: white;
+      background: #ffffff;
+}
+
+.padding-none{
+    @media only screen and (min-width: 360px) and (max-width: 768px) {
+        padding: none !important;
+        width: 80% !important;
+    }
+    
+}
+
+.approvalsdesignforactivity{
+    .MuiPaper-root{
+        border-left: 1px solid #6666 !important;
+        padding-left: 10px !important;
+    }
+    .MuiPaper-rounded {
+        border-radius: 0px !important;
+    }
+    
+}

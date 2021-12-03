@@ -1,0 +1,111 @@
+.headerdesign{
+    display:flex ;
+    // div::after{
+    // content: "";
+    // position: flex;
+    // bottom: 0;
+    // left: 50%;
+    // transform: translate(-50%,0);
+    // width: 100px;
+    // display: block;
+    // height: 4px;
+    // background-color: #21386c;
+    // }
+}
+
+.samedesign{
+    // border-bottom: 2px solid black;
+    border-bottom: 3px solid #21386c;
+    font-family: -apple-system,BlinkMacSystemFont,"SF UI Display",Roboto,Oxygen,Ubuntu,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+
+}
+.icon_color{
+    margin-right: 5px;
+    // margin-bottom: 10px;
+}
+
+
+.differentdesign{
+    font-family: -apple-system,BlinkMacSystemFont,"SF UI Display",Roboto,Oxygen,Ubuntu,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-weight: 400;
+}
+
+.MuiTab-wrapper {
+    width: 100%;
+    display: contents !important;
+    /* padding-left: 10px; */
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    @media only screen and (min-width: 360px) and (max-width: 768px) {
+        font-size: 15px !important;
+      }
+  
+      /* Medium Devices, Desktops */
+      @media only screen and (min-width: 992px) {
+        font-size: 20px !important;
+        // background-color: pink;
+      }
+    
+    font-weight: 500;
+    font-family: -apple-system,BlinkMacSystemFont,"SF UI Display",Roboto,Oxygen,Ubuntu,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+
+}
+
+.MuiTab-labelIcon .MuiTab-wrapper > *:first-child {
+    margin-bottom: 6px;
+    margin-right: 10px;
+}
+
+.MuiTabs-flexContainer {
+    display: flex;
+    height: 40px;
+}
+
+.backgrounddesign{
+    background-color: whitesmoke;
+}
+
+.MuiBox-root {
+    padding-left: 10px !important;
+    padding-right: 5px !important;
+    padding-top: 1px !important;
+    padding-bottom: 10px !important;
+}
+
+.MuiPaper-elevation4 {
+    box-shadow: none !important; 
+}
+
+
+.MuiTab-root {
+    padding: 6px 12px !important;
+    overflow: hidden;
+    position: relative;
+  
+    max-width: 264px;
+    @media only screen and (min-width: 360px) and (max-width: 768px) {
+        min-width: 125px !important;
+        font-size: 10px !important;
+    }
+    @media only screen and (min-width : 992px) {
+        min-width: 130px !important;
+        font-size: 0.875rem !important;
+        // background-color: pink;
+      }
+    
+    box-sizing: border-box;
+    min-height: 45px !important;
+    text-align: center;
+    flex-shrink: 0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF UI Display",Roboto,Oxygen,Ubuntu,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif !important;
+    font-weight: 600 !important;
+    line-height: 1.75;
+    white-space: normal;
+    letter-spacing: 0.02857em;
+    text-transform: none !important;
+}
+
+.MuiTabs-root{
+    min-height: 40px !important;
+}

@@ -1,0 +1,23 @@
+.no__files {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300;
+  height: 300px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+  transition: all .25s ease-in;
+  opacity: 2 !important;
+  /* width: 100px; */
+  filter: alpha(opacity=40);
+  position: absolute;
+  z-index: 15;
+  top: 20px;
+  background: none;
+  border: 0;
+  font-size: 5px;
+  cursor: pointer;
+}

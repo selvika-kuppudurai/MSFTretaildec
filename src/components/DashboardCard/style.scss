@@ -1,0 +1,145 @@
+.carddesignfordashboard{
+    background-color: #fff;
+    margin-top: 1rem;
+    width: 100%;
+    // max-width: 19% !important;
+    cursor: default;
+    border-radius: 5px;
+  box-shadow: 0 4px 5px rgba(0,0,0,.12);
+  img{
+      width: 100% !important;
+  }
+
+   /* Small Devices, Tablets */
+   @media only screen and (min-width: 360px) and (max-width: 768px) {
+    width: 49% !important;
+    // background-color: green;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    max-width: 19% !important;
+    
+    // background-color: green;
+  }
+  @media (min-width: 576px){
+    max-width: 19% !important;
+  }
+
+  /* Medium Devices, Desktops */
+  @media only screen and (min-width : 992px) {
+    max-width: 19% !important;
+    // background-color: pink;
+  }
+}
+
+.dashboard__card{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.numberdesign{
+    @media only screen and (min-width: 1070px) and (max-width: 1330px) {
+        font-size: 30px;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 990px) {
+        font-size: 20px;
+        // background-color: green;
+      }
+      @media only screen and (min-width: 400px) and (max-width: 768px) {
+        font-size: 18px;
+        // background-color: green;
+      }
+     
+      font-size: 30px;
+    font-weight: 100;
+    font-family:  Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    color: #3c3c3c;
+    width: 100%;
+    text-align: center;
+}
+
+.insidecarddesign{
+    display: flex;
+}
+
+.MuiInputLabel-formControl{
+    font-size: 14px !important;
+}
+
+.margindesign{
+    margin: 50%;
+}
+// img {
+//     width: 20% !important;
+// }
+.contentdesign{
+    @media only screen and (min-width: 1070px) and (max-width: 1330px) {
+        font-size: 17px !important;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 990px) {
+        font-size: 15px;
+        // background-color: green;
+      }
+      @media only screen and (min-width: 400px) and (max-width: 768px) {
+        font-size: 13px;
+        // background-color: green;
+      }
+     
+    text-align: center;
+    margin-top: 15%;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1971b8;
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    span{
+        color: black;
+        font-weight: 500;
+        padding: 20%;
+    }
+}
+
+.marginautoforlogoalignment{
+    margin: auto;
+}
+.headerdesignforchart{
+    font-size: 16px ;
+    font-weight: 600 ;
+    color: #21386c ;
+    text-align: center;
+    padding: 2%;
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    p{
+        margin-bottom: 0 !important;
+    }
+   
+
+}
+.borderdesign{
+    padding: 0px !important;
+}
+.card__container { 
+    background-color: #fff;
+    margin-top: 1rem;
+    width: 70%;
+    margin-left: 0;
+    margin-right: 0;
+    width: 20%;
+}
+.carddesignforchart{
+    @media only screen and (min-width: 360px) and (max-width: 768px) {
+       margin-bottom: 10px;
+        // background-color: green;
+      }
+    height: 320px;
+    background-color: #fff;
+    // max-width: 33% !important;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0,0,0,.12); 
+}
+
+.carddesignforchart1{
+    background-color: #fff;
+    // max-width: 33% !important;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0,0,0,.12); 
+}

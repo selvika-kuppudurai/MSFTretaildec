@@ -1,0 +1,194 @@
+.header {
+    // padding-bottom: 5    px;
+    background-color: #f5f5f5;
+
+    @media (max-width:768px) {
+        padding: 1em 1em;
+    }
+
+    &__retail {
+        margin-left: 2rem;
+        border-left: 2px solid #262626;
+        padding-left: 1rem;
+        color: #262626;
+        font-size: 16px;
+        font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 600;
+        @media only screen and (min-width: 500px) and (max-width: 770px) {
+            margin-left: 1rem !important;
+            padding: 1% !important;
+        }
+        p{
+            @media only screen and (min-width: 1070px) and (max-width: 1330px) {
+                font-size: 1.5rem !important;
+            }
+
+            @media only screen and (min-width: 770px) and (max-width: 1070px) {
+                font-size: 15px !important;
+            }
+
+            @media only screen and (min-width: 500px) and (max-width: 770px) {
+                font-size: 13px !important;
+            }
+           
+            
+           
+
+            // @media  (min-width: 1340px) {
+            //     font-size: 2rem !important;
+            // }
+
+            // @media only screen and (min-width: 965px) and (max-width: 1070px) {
+            //     font-size: 13px !important;
+            // }
+
+            // @media only screen and (min-width: 450px) and (max-width: 965px) {
+            //     font-size: 10px !important;
+            // }
+            font-size: 2rem !important;
+            line-height: 1.5;
+            
+        }
+    }
+
+    &__logo {
+        width: 10%;
+
+        @media (max-width:360px) {
+            width: 20%;
+        }
+    }
+    // .fontsize{
+    //     @media (max-width:768px) {
+    //         font-size: 1rem;
+    //     }
+    // }
+
+    .icon__clr {
+        color: #262626;
+        @media only screen and (min-width: 720px) {
+            margin-right: 1rem !important; 
+        }
+        // margin-right: 1rem;
+    }
+.hoverdesign:hover{
+    // border-bottom: 2px solid #262626;
+    border-bottom: 2px solid #262626 !important;
+    line-height: inherit;
+}
+    .headerdesignfortabs{
+        @media only screen and  (min-width: 1330px) {
+            
+        }
+        @media only screen and (min-width: 1070px) and (max-width: 1330px) {
+            font-size: 16px !important;
+        }
+
+        @media only screen and (min-width: 640px) and (max-width: 770px) {
+            font-size: 14px !important;
+        }
+
+        @media only screen and (min-width: 400px) and (max-width: 640px) {
+            font-size: 12px !important;
+        }
+        // @media only screen and (min-width: 1070px) and (max-width: 1330px) {
+        //     font-size: 15px;
+        // }
+
+        // @media only screen and (min-width: 995px) and (max-width: 1070px) {
+        //     font-size: 13px ;
+        // }
+        // @media only screen and (min-width: 940px) and (max-width: 995px) {
+        //     font-size: 10px ;
+        // }
+        // @media only screen and (min-width: 400px) and (max-width: 740px) {
+        //     font-size: 8px ;
+        // }
+        font-size: 17px;
+        text-align: center;
+        font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+   p{
+       margin-bottom: 0 !important;
+       line-height: inherit !important;
+   }
+   a{
+       color: #262626 !important;
+   }
+   .selecteddesign{
+       color: #262626 !important;
+    //    border-bottom: 2px solid #262626 !important;
+    border-bottom: 2px solid #262626 !important;
+    line-height: inherit;
+   }
+    }
+    .mobileresponsive{
+        @media only screen and (min-width: 400px) and (max-width: 640px) {
+            padding: 0 !important;
+        }
+    }
+    .user__detail {
+        @media only screen and (min-width: 700px) and (max-width: 992px) {
+            font-size: 1rem;
+        }
+        @media only screen and (min-width: 400px) and (max-width: 700px) {
+            font-size: 9px;
+        }
+
+        @media only screen and (min-width: 200px) and (max-width: 400px) {
+            font-size: 12px;
+        }
+        
+        @media (min-width :992px) {
+            font-size: 1.3rem;
+        }
+        
+        // font-size: 1.3rem;
+        white-space: nowrap;
+        color: #262626 !important;
+        line-height: 1.2;
+    }
+
+    .header__retail__mobileview{
+        margin-top: 10px;
+        margin-left: 5px;
+        color: #262626;
+        font-size: 14px;
+        font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 600;
+        h2{
+            @media (max-width:768px) {
+                font-size: 14px !important;
+            }
+            @media (min-width :992px) {
+                font-size: 2rem !important;
+            }
+            
+        }
+    }
+    .user__arrow {
+        position: relative;
+
+        .icon__arrow {
+            position: absolute;
+        }
+    }
+.headerdesign_boxshadow{
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,.20), 0px 4px 5px 0px rgba(0, 0 ,0 , .14), 0px 1px 10px 0px rgba(0, 0 ,0,  .12) !important;
+    background-color:#ffffff;
+    padding: 10px;
+}
+.margintop-2{
+    
+    @media (max-width:768px) {
+        margin-top: 10px;
+    }
+}
+
+.mobileview_fontsize{
+    
+    @media only screen and (min-width: 200px) and (max-width: 400px) {
+        padding: 0 !important;
+    }
+    
+}
+}

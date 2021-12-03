@@ -1,0 +1,25 @@
+.tabdesign{
+
+    .MuiTab-textColorPrimary.Mui-selected{
+        @media only screen and (max-width: 450px) {
+        background-color: #3f51b5 !important;
+        color: #ffff !important;
+        }
+    }
+    // background-color: #fff !important;
+    .MuiTab-textColorPrimary.Mui-selected {
+        border-radius: 5px;
+    }
+
+    @media only screen and (min-width: 600px) {
+        .MuiTab-wrapper {
+            font-size: 16px !important;
+             }
+          }
+          .MuiTab-root{
+            min-width: 110px !important;
+            font-size: 10px !important;
+        }
+         
+    
+}

@@ -1,0 +1,125 @@
+.App {
+  background-color: #fff;
+  font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  // border-radius: 10px;
+  padding-bottom: 3%;
+  // box-sh   adow: 0 4px 5px rgba(0, 0, 0, 0.12);
+  color: white;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.react-tabs {
+ 
+  width: 470px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border: 1px solid #ffffff;
+  color: #1c1d1f;
+  background: #ffffff;
+}
+.react-tabs__tab-list__approvals{
+  list-style: none;
+  @media only screen and (min-width: 992px) {
+    // padding: 12px 6px;
+    font-size: 15px;
+      }
+      @media only screen and (min-width: 360px) and (max-width: 768px) {
+        font-size: 14px;
+        // background-color: green;
+      }
+
+  cursor: pointer;
+  color: #666666;
+  text-align: center;
+  p{
+    margin: 5px !important;
+    padding: 8% !important;
+  }
+}
+
+.react-tabs__tab-list {
+  
+  flex-direction: column;
+width: 100px !important;
+// @media only screen and (min-width: 992px) {
+//   width: 100px;
+//     }
+//     @media only screen and (min-width: 360px) and (max-width: 768px) {
+//       width: 70px !important;
+//       // background-color: green;
+//     }
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  color: white;
+  background: #ffffff;
+}
+
+.react-tabs__tab {
+  // height: 50px;
+  list-style: none;
+  @media only screen and (min-width: 992px) {
+    // padding: 12px 6px;
+    font-size: 15px;
+      }
+      @media only screen and (min-width: 360px) and (max-width: 768px) {
+        font-size:  14px !important;
+        // background-color: green;
+      }
+
+  cursor: pointer;
+  color: #666666;
+  text-align: center;
+  p{
+    margin: 5px !important;
+    padding-bottom: 4%;
+      padding-top: 4%;
+      padding-left: 3%;
+      padding-right: 3%;
+  }
+  
+}
+
+.react-tabs__tab--selected {
+  @media only screen and (min-width: 992px) {
+    // padding: 12px 6px;
+    font-size: 15px;
+      }
+      @media only screen and (min-width: 360px) and (max-width: 768px) {
+        font-size: 14px;
+        // background-color: green;
+      }
+  background: #ffffff;
+  border-color: #1c1d1f;
+  // border-bottom: 4px solid #3f5ec1;
+  color: #0079c0;
+  text-align: center;
+  // font-size: 15px;
+  p {
+    color: #ffffff;
+    background-color: #0079c0;
+    
+    
+   
+    @media only screen and (min-width: 992px) {
+      padding-bottom: 4%;
+      padding-top: 4%;
+      padding-left: 3%;
+      padding-right: 3%;
+        }
+    border-radius: 5px;
+  }
+}
+
+// .react-tabs__tab-panel--selected {
+//   display: flex;
+// }
+
+
+
+
+
+.panel-content {
+  text-align: center;
+}
