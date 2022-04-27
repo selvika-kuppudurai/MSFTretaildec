@@ -10,7 +10,7 @@ import moment from "moment";
 const materialInfoColumns = [
     { id: 'model', label: 'Program Model', className: "text-c2 fw-700", width: "8%" },
     { id: 'sku', label: 'Fixture', className: "text-c2 fw-700", width: "8%" },
-    { id: 'fixtureDescription', label: 'Fixture Description', className: "text-c2 fw-700", width: "8%" },
+    { id: 'fixtureDescription', label: 'Fixture Description', className: "text-c2 fw-700", width: "10%" },
 
     { id: 'assetTagId', label: 'Asset Tag ID', className: "text-c2 fw-700", width: "8%" },
     { id: 'Previous Asset Tag ID', label: 'Previous Asset Tag ID', className: "text-c2 fw-700", width: "8%" },

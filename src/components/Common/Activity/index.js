@@ -309,7 +309,7 @@ const Activitytab = ({ loadUserApprovals, activityData, userApproveReject, userD
   };
 
   const handleSubmit = () => {
-    userApproveReject("Reset", userDetails.name, chosenRecords).then(() => {
+    userApproveReject("Reset", userDetails.name, userDetails.email, chosenRecords).then(() => {
       selectedRecords([])
     })
   }

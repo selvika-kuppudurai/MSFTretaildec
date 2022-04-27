@@ -9,9 +9,9 @@ import Loader from "react-loader-spinner";
 import { GrFormClose } from 'react-icons/gr';
 
 
-
+//this component called after clicking the glid in approval page 
 const ApprovalDetailsModal = ({ modal, modalCancel, storeDetails }) => {
-    console.log("sdfsjdhfjsadf", storeDetails)
+   
     return (
         <Dialog open={modal} handleCancel={modalCancel} aria-labelledby="form-dialog-title" onBackdropClick={modalCancel} maxWidth="md">
 

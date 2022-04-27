@@ -8,6 +8,7 @@ import './dialoguestyle.scss';
 import Button from "@material-ui/core/Button"
 import { GrFormClose } from 'react-icons/gr';
 import { connect } from "react-redux"
+// installation files
 class  Dialoguebox extends React.Component {
     Opendialogue = false;
     state = {
@@ -40,14 +41,13 @@ class  Dialoguebox extends React.Component {
 
         }
     }
-//   const [dialogue, setdialogue] = useState([])
-//     const [Opendialogue, setdialogueboxfor1] = useState(false)
+
      handleCancel = () => {
-        console.log('g')
+     
         this.setdialogueboxfor1(false)
     }
     setdialoguebox = () => {
-        console.log('ddf')
+     
         this.setdialogueboxfor1(true)
     }
     splitUrlFiles = (name) => {
@@ -110,21 +110,10 @@ class  Dialoguebox extends React.Component {
 
         }
 
-        // if (name === "Signature") {
-
-        //     let signatureFiles = formFields[name]
-
-        //     formFields["siganturelink"] = signatureFiles.filter(d => d.name === undefined)
-
-        //     formFields["SignatureFiles"] = signatureFiles.filter(d => d.name !== undefined)
-
-        // }
+      
 
         return formFields;
 
-        // this.setState({ formFields })
-
-        // console.log(formFields, "asdjkfhjkasdhjksfhjksdfsdf")
     }
 
     storeFiles = (data, name) => {
@@ -137,8 +126,6 @@ class  Dialoguebox extends React.Component {
             arr.push(data.target.files[i]);
         }
 
-        console.log("asdfhhagsdkfhgashdf", arr)
-
         if (formFields[name] && formFields[name].length > 0) {
 
             for (let i = 0; i < data.target.files.length; i++) {
@@ -149,18 +136,9 @@ class  Dialoguebox extends React.Component {
         } else {
             formFields[name] = arr
         }
-
-        // formFields[name] = arr
-
-console.log(formFields)
-sessionStorage.setItem('hero_shot', JSON.stringify(formFields))
-
         this.setState({ formFields }, () => this.splitUrlFiles(name))
     }
     handlesubmit  = () => {
-        // console.log(dialogue)
-       
-        // dispatch({ type: "installation_image", payload: dialogue })
     }
     setdialoguebox = () => {
         let {formFields} = this.state

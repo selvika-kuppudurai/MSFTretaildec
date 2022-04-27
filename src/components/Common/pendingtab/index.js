@@ -204,6 +204,9 @@ const PendingTab = ({ loadUserApprovals, pendingData, userApproveReject, userDet
 
   const [chosenRecords, setChosenRecords] = useState([])
 
+
+  const [selectapproval, setapproval] = useState(false)
+  const[selectreject, setreject] = useState(false)
   const [modal, setModal] = useState(false)
 
 
@@ -254,7 +257,9 @@ const PendingTab = ({ loadUserApprovals, pendingData, userApproveReject, userDet
 
   const handleClick = (event, data, idx) => {
 
-    console.log(event)
+    console.log('xxx',event)
+    console.log('xxx1',data)
+    console.log('xxx2',idx)
 
     if (records.length > 0 && records.includes(idx)) {
 
@@ -319,11 +324,16 @@ const PendingTab = ({ loadUserApprovals, pendingData, userApproveReject, userDet
   }
 
   const handleSubmit = (flag) => {
+    setapproval(true)
+    setreject(true)
     console.log(flag)
-    console.log(userDetails.name)
+    console.log('useremail',userDetails)
     console.log(chosenRecords, "red")
-    userApproveReject(flag, userDetails.name, chosenRecords).then(() => {
+    userApproveReject(flag, userDetails.name ,userDetails.email, chosenRecords).then(() => {
+      setapproval(false)
+      setreject(false)
       selectedRecords([])
+      setChosenRecords([])
     })
   }
 
@@ -430,12 +440,14 @@ const PendingTab = ({ loadUserApprovals, pendingData, userApproveReject, userDet
         {modal && <ApprovalDetailsModal modal={modal} modalCancel={modalCancel} storeDetails={storeDetails} />}
 
         <div className="d-flex justify-content-center">
+          
         <div className="mt-4 add__asset__approve mr-3">
-                                    <Button variant="contained" onClick={() => handleSubmit("Approval")} > Approve</Button>
-                                </div>
+                                    <Button className={ !selectapproval ? '' : 'disabled' } variant="contained" onClick={() => handleSubmit("Approval")} > Approve</Button>
+                                </div> 
           {/* <button className=" mt-4 buttondesignforpending d-flex mr-4" onClick={() => handleSubmit("Approval")}><FcCheckmark size="30" className="mr-2" /><p>Approve</p></button> */}
           <div className="mt-4 add__asset__reject">
-                                    <Button variant="contained" onClick={() => handleSubmit("Rejected")} > Reject</Button>
+          
+                                    <Button className={ !selectreject ? '' : 'disabled' } variant="contained" onClick={() => handleSubmit("Rejected")} > Reject</Button>
                                 </div>
           {/* <button className="buttondesignforpending d-flex colorchangeforpending mt-4" onClick={() => handleSubmit("Rejected")}><ImCross size="20" className="mt-3 mr-2 icondesign" /><p>Reject</p></button> */}
         </div>

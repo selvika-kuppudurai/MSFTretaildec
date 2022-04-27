@@ -1,0 +1,56 @@
+@import "../../../assets/scss/abstracts/abstracts-dir.scss";
+.form-group {
+  .select-form-control {
+    // background-image: url("../../../assets/images/svg/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: 90%;
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.4rem !important;
+   
+    &:focus {
+      border: 1px solid #e8e8e8;
+    }
+  }
+}
+.inner-page.Hcp {
+  .form-group .select-form-control {
+    background-image: none;
+  }
+}
+
+.slot-disabled {
+  color: lightgrey;
+}
+
+
+.widthfordropdown{
+  width: 100px;
+  .anticon{
+ display: none !important;
+  }
+  .ant-select-single .ant-select-selector .ant-select-selection-item, .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+    /* padding: 0; */
+   
+    /* transition: all 0.3s; */
+}
+
+.ant-select-selection-placeholder {
+   padding-right: 0px !important; 
+   line-height: 40px !important;
+}
+.ant-select-selection-item{
+  padding-right: 0px !important; 
+   line-height: 40px !important;
+   text-align: left;
+}
+.ant-select-selector{
+  text-align: left !important;
+}
+}
+
+// .MuiInputLabel-shrink {
+//   transform: translate(0, 24px) scale(1) !important;
+//   transform-origin: top left;
+// }

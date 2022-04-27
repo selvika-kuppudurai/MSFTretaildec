@@ -181,6 +181,7 @@ const SummaryFilters = ({ sendData, summaryFilter, dispatch }) => {
         console.log('name', name)
         formFields[name] = data
         setFormFields(formFields)
+        console.log('ssssssssssss',formFields)
 
         let chosenFilters = {
             ...formFields,

@@ -1,16 +1,9 @@
 import React, { useState } from "react";
 import { Carousel } from 'react-responsive-carousel'
 import Skeleton from 'react-loading-skeleton';
-
-
-// import { Carousel}
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ImageModal from "../../pages/deepDive/ImageModal";
-import UrlImageDownloader from 'react-url-image-downloader'
 import {FiDownload }  from 'react-icons/fi'
-
-
-
 
 const Carosuel = ({ title = "", images = [], fileExtension = [], loadImage = true, changeExtensionView, loadPdf = false, carouselId, carouselLoader, filesExist }) => {
 
@@ -18,7 +11,6 @@ const Carosuel = ({ title = "", images = [], fileExtension = [], loadImage = tru
     const [imageUrl, setImageUrl] = useState()
 
     const closeModal = () => setModalVisible(false)
-
 
     const modalState = (image) => {
         setModalVisible(true)
@@ -29,14 +21,12 @@ const state = {
         imageArray: [
         ]
     }
-  
-    // for(var i = 0; i < )
    
-
+// call when click the image 
       const fileDownloadHandler = async (pictures, title) => {
         for (var i = 0; i< pictures.length; i++) {
         // console.log(pictureUrl)
-        const response = await fetch(pictures[i] +'?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2021-12-30T22:59:50Z&st=2021-11-01T14:59:50Z&spr=https&sig=UUE3%2FUV1BF0s2sYhjbwZtPhJefFu9fc3dLkxkXPju78%3D');
+        const response = await fetch(pictures[i] +'?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2022-12-31T19:38:38Z&st=2021-12-31T11:38:38Z&spr=https&sig=qkKsQ38jB4bblafsJqMtVajdRBPPyyDD9NFl95PVlDc%3D');
         console.log(response)
         response.blob().then(blob => {
             let url = window.URL.createObjectURL(blob);
@@ -47,13 +37,10 @@ const state = {
         });
       }
     }
-  
-    console.log(images)
 
     return (
 
         <div className='col-lg-4 col-md-4 col-sm-12 carddesign1 mt-4 equalwidth' >
-           
            {/* <div className="App"> */}
           
       {/* <a
@@ -84,15 +71,12 @@ const state = {
                 </div>
                 {<Carousel autoPlay>
                     {images.length > 0 && images != '' && images.map((image) => {
-                        
-                        console.log('ccccc',images)
-
                         return (
                             <>
                                 {loadImage && image != '' &&
                                 
-                                    <div className="cursor-pointer" onClick={() => modalState(image + '?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2021-12-30T22:59:50Z&st=2021-11-01T14:59:50Z&spr=https&sig=UUE3%2FUV1BF0s2sYhjbwZtPhJefFu9fc3dLkxkXPju78%3D')}>
-                                        <img className="d-block w-100" src={image + '?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2021-12-30T22:59:50Z&st=2021-11-01T14:59:50Z&spr=https&sig=UUE3%2FUV1BF0s2sYhjbwZtPhJefFu9fc3dLkxkXPju78%3D'} alt="image2" loading="lazy" />
+                                    <div className="cursor-pointer" onClick={() => modalState(image + '?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2022-12-31T19:38:38Z&st=2021-12-31T11:38:38Z&spr=https&sig=qkKsQ38jB4bblafsJqMtVajdRBPPyyDD9NFl95PVlDc%3D')}>
+                                        <img className="d-block w-100" src={image + '?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2022-12-31T19:38:38Z&st=2021-12-31T11:38:38Z&spr=https&sig=qkKsQ38jB4bblafsJqMtVajdRBPPyyDD9NFl95PVlDc%3D'} alt="image2" loading="lazy" />
                                     </div>
                                 }
 

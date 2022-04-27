@@ -323,5 +323,3 @@ class Chartscomponent4 extends Component {
 }
 
 export { Chartscomponent, Chartscomponent1, Chartscomponent3, Chartscomponent4 };
-
-// export default Chats;

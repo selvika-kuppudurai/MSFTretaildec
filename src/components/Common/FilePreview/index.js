@@ -83,14 +83,14 @@ console.log('gg')
                                 </>
                                 :
                                 file.type === undefined && file.split(".").pop() !== "pdf" && <>
-                                    <img src={file +'?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2021-12-30T22:59:50Z&st=2021-11-01T14:59:50Z&spr=https&sig=UUE3%2FUV1BF0s2sYhjbwZtPhJefFu9fc3dLkxkXPju78%3D'} alt="imagefile" className="cursor-pointer" onClick={() => showFile(file +'?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2021-12-30T22:59:50Z&st=2021-11-01T14:59:50Z&spr=https&sig=UUE3%2FUV1BF0s2sYhjbwZtPhJefFu9fc3dLkxkXPju78%3D')} />
+                                    <img src={file +'?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2022-12-31T19:38:38Z&st=2021-12-31T11:38:38Z&spr=https&sig=qkKsQ38jB4bblafsJqMtVajdRBPPyyDD9NFl95PVlDc%3D'} alt="imagefile" className="cursor-pointer" onClick={() => showFile(file +'?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2022-12-31T19:38:38Z&st=2021-12-31T11:38:38Z&spr=https&sig=qkKsQ38jB4bblafsJqMtVajdRBPPyyDD9NFl95PVlDc%3D')} />
                                 </>
                             }
 
                             {(file.type === "application/pdf" || file.type === undefined && file.split(".").pop() === "pdf") &&
                                 <>
 
-                                    <img src={Pdficon} alt="imagefile" className="cursor-pointer d-flex justify-content-center pdf__icon" onClick={() => showFile(file +'?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2021-12-30T22:59:50Z&st=2021-11-01T14:59:50Z&spr=https&sig=UUE3%2FUV1BF0s2sYhjbwZtPhJefFu9fc3dLkxkXPju78%3D')} />
+                                    <img src={Pdficon} alt="imagefile" className="cursor-pointer d-flex justify-content-center pdf__icon" onClick={() => showFile(file +'?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2022-12-31T19:38:38Z&st=2021-12-31T11:38:38Z&spr=https&sig=qkKsQ38jB4bblafsJqMtVajdRBPPyyDD9NFl95PVlDc%3D')} />
 
                                     {/* <a href={URL.createObjectURL(file)} target="_blank" className="d-flex align-items-center pdf__file" rel="noreferrer">{file.name}</a> */}
                                 </>

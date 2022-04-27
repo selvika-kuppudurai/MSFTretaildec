@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.css'
 import './assets/scss/index.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import * as serviceWorker from './serviceWorker';
 import jwt_decode from "jwt-decode";
 
@@ -59,7 +60,8 @@ authentication.run(() => {
     country: decoded.country,
     email: decoded.emails[0],
     role: "Guest",
-    requestedRole: decoded.extension_Role
+    requestedRole: decoded.extension_Role,
+    
   }
 
 

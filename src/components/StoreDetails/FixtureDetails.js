@@ -97,7 +97,7 @@ const FixtureDetails = ({ assetDetailsVisibility, data, userDetails, loader, ope
                         </div>}
                     </div>
                     <Card.Text className='textdesign'>
-                        <div className="table-container">
+                        <div className="table-container customdesign11">
                             {/* <CSVLink data={data}><MdModeEdit/></CSVLink> */}
                             <CustomTable className="" columns={columns} onSort={(data) => onSort(data)} tableLength={data.length}>
 

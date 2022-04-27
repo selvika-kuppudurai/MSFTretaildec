@@ -11,6 +11,10 @@ export const checkGlId = (glid) => async dispatch => {
 
             let url = endPoints.storeInfo.glid + "?GLIDCode=" + `${glid}`
             const res = await axios.get(url)
+            
+            let url1 = endPoints.userManage.approvals + "?Params=Activity"
+            const res1 = await axios.get(url1)
+            console.log('vcvc', res1)
             if (res.status === 200) {
 
                 console.log("sadfashdfjahsdjfhasjdfasd", res.data)
@@ -28,15 +32,51 @@ export const checkGlId = (glid) => async dispatch => {
                 if (res.data.datacheck.message === "Store already Exists") {
                     console.log('vv', res)
 
-                    dispatch({ type: "GLID_AVAIL", payload: { repTool: false, storeError: true, result: res.data.resultquery, executionResult: res.data.executionResult, fixedSelection: res.data.fixedSelection, graphicsLanguage: res.data.graphicsLanguage, model: res.data.model, status: res.data.status, fixtures: res.data.fixtures, fixtureDescription: res.data.fixturesDescription ? res.data.fixturesDescription : [], materialInfo: res.data.materialInfo ? res.data.materialInfo : [] } })
+                    dispatch({ type: "GLID_AVAIL", payload: { repTool: false, storeError: true, result: res.data.resultquery, executionResult: res.data.executionResult, fixedSelection: res.data.fixedSelection, graphicsLanguage: res.data.graphicsLanguage, model: res.data.model, status: res.data.status, fixtures: res.data.fixtures, glidvalues: res.data.glid, fixtureDescription: res.data.fixturesDescription ? res.data.fixturesDescription : [], materialInfo: res.data.materialInfo ? res.data.materialInfo : [] } })
 
 
                 }
 
                 if (res.data.datacheck.message === "Store Available in Reptool") {
 
-                    dispatch({ type: "GLID_DATA_STORE", payload: { repTool: false, storeError: false, result: res.data.result, executionResult: res.data.executionResult, fixedSelection: res.data.fixedSelection, graphicsLanguage: res.data.graphicsLanguage, model: res.data.model, status: res.data.status, fixtures: res.data.fixtures, fixtureDescription: res.data.fixturesDescription ? res.data.fixturesDescription : [] } })
+                    dispatch({ type: "GLID_DATA_STORE", payload: { repTool: false, storeError: false, result: res.data.result, executionResult: res.data.executionResult, fixedSelection: res.data.fixedSelection, graphicsLanguage: res.data.graphicsLanguage, model: res.data.model, status: res.data.status, glidvalues: res.data.glid, fixtures: res.data.fixtures, fixtureDescription: res.data.fixturesDescription ? res.data.fixturesDescription : [] } })
                 }
+            }
+
+            if(res1.status === 200) {
+                let test = []
+                console.log('test1',res1)
+                for(let i=0; i<res1.data.length; i++){
+                    console.log('test2')
+                    console.log('rr')
+                    if(res1.data[i].glid === glid){
+                        console.log('test3')
+                        test.push(res1.data[i])
+                        // dispatch({ type: "activity", payload:  ''})
+
+                    }
+
+                }
+                if(test.length > 0){
+                    console.log('bcbc')
+                    let c = [];
+                    let v= [];
+                    // for(let j = 0 ; j < test.length; j++){
+                    //     if(test[j].approvalDate.split('T')[1].split(':')[1] > test[j+1].approvalDate.split('T')[1].split(':')[1]){
+                    //       c.push(test[j].approvalDate.split('T')[1].split(':')[1])
+                    //     } else {
+
+                    //     }
+                    c = (new Date(Math.max.apply(null, test.map(function(e) {
+                        return new Date(e.systemUpdatedDate);
+                      }))));
+                      v.push(c)
+                      console.log('testttt',v)
+                      dispatch({ type: "activity", payload:  c})
+                    // }
+                    
+                }
+
             }
         } else {
             dispatch({ type: "GLID_CHECK", payload: { repTool: false, storeError: false } })
@@ -139,12 +179,14 @@ export const addStore = (Glid, data1, data2, storeData, listofAdmins) => async d
 
 
     console.log("modelvalues", data2)
+    let utctimeformat = new Date().toISOString()
+    console.log('utctimeformat', utctimeformat)
 
 
     let role = sessionStorage.getItem("userRoleDetail")
     let userDetails = JSON.parse(sessionStorage.getItem("userDetails"))
 
-
+    
 
     // emailjs.send('service_oz3rurt', 'template_un4jnox', templateParams, 'user_bNTtSlTQS5MCCm62EgOYV')
     //     .then((result) => {
@@ -160,8 +202,7 @@ export const addStore = (Glid, data1, data2, storeData, listofAdmins) => async d
         let url = endPoints.storeInfo.addStore + "?ExecutionTier=" + `${data1.floorPlan.executionResult}` + "&SubPmname=" + `${data1.floorPlan.subpm}` + "&FixedSelection=" + `${data1.floorPlan.fixedSelection}` + "&BackwallCustomSpecifications=" + `${data1.floorPlan.BackwallCustomSpecifications}` + "&SpecialRequests=" + `${data1.floorPlan.SpecialRequests}` + "&GraphicsLanguage=" + `${data1.floorPlan.GraphicsLanguage}` + "&DeliveryAddress=" + `${data2.deliveryAddress}` + "&DeliveryCity=" + `${data2.deliveryCity}` + "&Comments=" + `${data2.Comments}` + "&DeliveryState=" + `${data2.deliveryState}` + "&DeliveryZip=" + `${data2.deliveryZip}` + "&glid=" + `${Glid}` + "&Glid=" +
             `${Glid}` + "&Updatedby=" + `${userDetails.email}` + "&UpdatedbyUser=" + `${userDetails.name}` + "&Role=" + `${role}` + "&Model=" + `${ModelValue}` + "&Sku=" + `${encodeURIComponent(SkuValue)}` + "&AssetTagId=" + `${AssetTagValues}` + "&PreviousAssetTag=" +
             `${PrevAssetValues}` + "&FixtureCost=" + `${FixtureValues}` + "&Status=" + `${StatusValues}` + "&FixtureDescription=" + `${encodeURIComponent(FixtureDescValue)}` +
-            "&InstallerName=" + `${InstallerValues}` + "&InstallerContact=" + `${InstallerContactValues}` + "&Phoneno=" + `${InstallerPhoneValues}`
-            + "&Picofspacelink=" + `${Picofspacelink}` + "&_2dlink=" + `${_2dlink}` + "&_3dRlink=" + `${_3dRlink}` + "&Quadlink=" + `${Quadlink}` + "&Floorplanlink=" + `${Floorplanlink}` + "&Installationimagelink=" + `${Installationlink}` + "&siganturelink=" + `${SignatureLink}` + "&HeroShotimagelink=" +`${heroshotLink}` + "&MainFrontimagelink=" + `${MainfrontLink}` + "&LeftFrontimagelink=" + `${LeftfrontLink}` + "&RightFrontimagelink=" + `${RightfrontLink}`  + "&BestSideimagelink=" + `${BestsideLink}` + "&MainRearimagelink=" + `${MainrearLink}`
+            "&InstallerName=" + `${InstallerValues}` + "&InstallerContact=" + `${InstallerContactValues}` + "&Phoneno=" + `${InstallerPhoneValues}` +"&Systemupdateddate="+ `${utctimeformat}` + "&Picofspacelink=" + `${Picofspacelink}` + "&_2dlink=" + `${_2dlink}` + "&_3dRlink=" + `${_3dRlink}` + "&Quadlink=" + `${Quadlink}` + "&Floorplanlink=" + `${Floorplanlink}` + "&Installationimagelink=" + `${Installationlink}` + "&siganturelink=" + `${SignatureLink}` + "&HeroShotimagelink=" +`${heroshotLink}` + "&MainFrontimagelink=" + `${MainfrontLink}` + "&LeftFrontimagelink=" + `${LeftfrontLink}` + "&RightFrontimagelink=" + `${RightfrontLink}`  + "&BestSideimagelink=" + `${BestsideLink}` + "&MainRearimagelink=" + `${MainrearLink}`
             + "&ActualInstallationDate=" + `${ActualDateValues}` + "&ProposedInstallationDate=" + `${ProposedDateValues}` + "&ResetFlag=" + `${keyName}` 
 
             // + "&MainFrontimagelink=" +`${SignatureLink}` + "&LeftFrontimagelink=" +`${SignatureLink}` + "&RightFrontimagelink=" +`${SignatureLink}`+ "&BestSideimagelink=" +`${SignatureLink}` + "&MainRearimagelink=" +`${SignatureLink}`

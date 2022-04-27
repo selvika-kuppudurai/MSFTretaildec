@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     },
 });
 
-const CustomTable = ({ children, columns = [], onSort, tableLength = 0, handlePagination, showPagination = false, loader = false, hideSortLable = true }) => {
+const CustomTable = ({ children, columns = [], onSort, tableLength = 0, handlePagination, showPagination = false, loader, hideSortLable = true }) => {
     const classes = useStyles();
     const [page, setPage] = React.useState(1);
     const [showtext, seticonchange] = React.useState(false)
@@ -42,7 +42,6 @@ const CustomTable = ({ children, columns = [], onSort, tableLength = 0, handlePa
 
     };
     const handleChangePage = (event, newPage) => {
-
         setPage(newPage);
         handlePagination(newPage)
     };
@@ -59,20 +58,9 @@ const CustomTable = ({ children, columns = [], onSort, tableLength = 0, handlePa
 
     };
 
-
-
-
-
-
-
-
-
-
     return (
         <Paper className={classes.root}>
             <TableContainer className={classes.container}>
-
-
 
                 <Table stickyHeader aria-label="sticky table table-container" >
                     {loader && <div className="table__center">
@@ -122,17 +110,6 @@ const CustomTable = ({ children, columns = [], onSort, tableLength = 0, handlePa
                     </TableBody>
                 </Table>
             </TableContainer>
-
-            {/* {showPagination && <TablePagination
-                rowsPerPageOptions={[]}
-                component="div"
-                count={tableLength}
-                rowsPerPage={rowsPerPage}
-                page={page}
-                onChangePage={handleChangePage}
-                onChangeRowsPerPage={handleChangeRowsPerPage}
-            />} */}
-
             {showPagination && <Pagination count={tableLength} page={page} color="primary" onChange={handleChangePage} />}
 
         </Paper>

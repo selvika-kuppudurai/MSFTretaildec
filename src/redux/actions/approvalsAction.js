@@ -28,14 +28,14 @@ export const loadUserApprovals = (paramData) => async dispatch => {
 }
 
 // approve or reject
-export const userApproveReject = (flag, loggedInUser, body) => async dispatch => {
+export const userApproveReject = (flag, loggedInUser, loggedInUserEmail ,body) => async dispatch => {
     try {
         let systemDate = []
         if (body.length > 0) {
             // systemDate = body.map(d => moment(d.systemUpdatedDate).format("YYYY-MM-DD HH:mm:ss.SSS"))
             systemDate = body.map(d => d.systemUpdatedDate)
         }
-        const url = endPoints.userManage.approvalsAction + "?Flag=" + `${flag}` + "&Approvaluser=" + `${loggedInUser}`
+        const url = endPoints.userManage.approvalsAction + "?Flag=" + `${flag}` + "&Approvaluser=" + `${loggedInUser}` + "&ApprovalEmail=" +`${loggedInUserEmail}`
 
         const res = await axios.put(url, body)
 

@@ -24,6 +24,7 @@
   margin-bottom: 1%;
   border-radius: 5px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.12);
+  
   // box-shadow: 0 5px 5px rgba(0,0,0,.12),0 5px 5px rgba(0,0,0,.14), 0 5px 5px rgba(0,0,0,.12) !important;
 }
 .react-pdf__Page__canvas {
@@ -50,6 +51,13 @@
   top: 0 !important
 }
 
+
+
+.customtable{
+  .MuiTableCell-body {
+    text-align: center !important;
+  }
+}
 // hr {
 //   border-top: 2px dotted #3f51b5;
 // }

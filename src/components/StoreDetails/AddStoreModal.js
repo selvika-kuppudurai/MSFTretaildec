@@ -36,7 +36,7 @@ const AddStoreModal = ({ visible, cancel, title, detailsModal, storeData, update
         <>
             <Modal visible={visible} title={title} centered={true} onCancel={cancel} footer={null} width={"97%"} className="store-modal">
 
-                <Tabs type="card" onChange={(d) => tabChange(d)} activeKey={activeTab} 	>
+                <Tabs className="mb-0" type="card" onChange={(d) => tabChange(d)} activeKey={activeTab} 	>
 
 
                     <TabPane tab={"Floor Plan"} key={"2"}>

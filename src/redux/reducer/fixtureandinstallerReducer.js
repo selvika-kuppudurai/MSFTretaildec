@@ -4,7 +4,9 @@ const initialState = {
     InstallerDetailsfordeepdive: {
         installerDetails: [],
         fixtureDatails: []
-    }
+    },
+   
+
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -20,6 +22,7 @@ export default function (state = initialState, action) {
                     fixtureDatails: payload.fixturedata
                 }
             }
+            
         case "Installer_fixture_fail":
             return {
                 ...state,
@@ -27,6 +30,8 @@ export default function (state = initialState, action) {
                     ...initialState.InstallerDetailsfordeepdive,
                 }
             }
+
+        
         default:
             return state;
     }

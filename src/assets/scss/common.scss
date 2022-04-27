@@ -393,6 +393,12 @@ input.form-control {
     // background-color: green;
   }
 }
+
+.customdesign11{
+  .MuiTableCell-body {
+    text-align: center !important;
+  }
+}
 .carddesignwithheight {
   background-color: #ffff;
   //   margin: 5%;
@@ -539,6 +545,10 @@ ul {
 .edit-button {
   position: relative;
   top: -10px;
+}
+
+.ant-tabs-nav{
+  margin-bottom: 0 !important;
 }
 
 .modal-input {

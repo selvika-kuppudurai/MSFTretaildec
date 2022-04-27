@@ -49,12 +49,14 @@
     "react-barcode-reader": "0.0.2",
     "react-bingmaps": "^3.6.1",
     "react-bootstrap": "^1.6.1",
+    "react-countdown": "^2.3.2",
     "react-csv": "^2.0.3",
     "react-dom": "^17.0.2",
     "react-dropdown": "^1.9.2",
     "react-helmet": "5.2.0",
     "react-icons": "^4.2.0",
     "react-js-pagination": "^3.0.3",
+    "react-loader-icon": "^1.0.1",
     "react-loader-spinner": "^4.0.0",
     "react-loading-skeleton": "^2.2.0",
     "react-native": "^0.66.0",
@@ -76,8 +78,10 @@
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+    "rxjs": "^7.5.3",
     "simple-react-validator": "^1.6.1",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts start",

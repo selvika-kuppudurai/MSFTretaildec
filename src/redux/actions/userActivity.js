@@ -4,6 +4,7 @@ import { endPoints } from "../../config/Api";
 export const loadUserActivity = (mailId) => async dispatch => {
 
     try {
+        console.log('bvbv')
 
         const url = endPoints.userManage.activityTrack + "?Params=" + `${mailId}`
 

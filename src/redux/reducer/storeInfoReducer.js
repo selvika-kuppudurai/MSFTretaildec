@@ -3,6 +3,9 @@ const initialState = {
     repToolError: false,
     storeError: false,
     Glid: null,
+    activity:{
+        result: ""
+    },
     storeData: {
         result: "",
         executionResult: "",
@@ -62,20 +65,21 @@ export default function (state = initialState, action) {
                 storeError: payload.storeError,
                 storeData: { result: [] }
             }
+        
         case "GLID_AVAIL":
 
             return {
                 ...state,
                 repToolError: payload.repTool,
                 storeError: payload.storeError,
-                storeData: { result: payload.result ? payload.result[0] : [], materialInfo: payload.materialInfo, executionResult: payload.executionResult.map(d => d.executionTier1), fixedSelection: payload.fixedSelection && payload.fixedSelection.map(d => d.fixedSelection1), graphicsLanguage: payload.graphicsLanguage && payload.graphicsLanguage.map(d => d.language), model: payload.model && payload.model.map(d => d.model), fixtures: payload.fixtures && payload.fixtures.map(d => d.fixture), status: payload.status && payload.status.map(d => d.status), fixtureDescription: payload.fixtureDescription.map(d => d.fixtureDescription) }
+                storeData: { result: payload.result ? payload.result[0] : [], materialInfo: payload.materialInfo, executionResult: payload.executionResult.map(d => d.executionTier1), fixedSelection: payload.fixedSelection && payload.fixedSelection.map(d => d.fixedSelection1), graphicsLanguage: payload.graphicsLanguage && payload.graphicsLanguage.map(d => d.language), model: payload.model && payload.model.map(d => d.model), fixtures: payload.fixtures && payload.fixtures.map(d => d.fixture), glidvalues: payload.glidvalues && payload.glidvalues.map(d => d.glid), status: payload.status && payload.status.map(d => d.status), fixtureDescription: payload.fixtureDescription.map(d => d.fixtureDescription) }
             }
         case "GLID_DATA_STORE":
             return {
                 ...state,
                 repToolError: payload.repTool,
                 storeError: payload.storeError,
-                storeData: { result: payload.result, executionResult: payload.executionResult.map(d => d.executionTier1), fixedSelection: payload.fixedSelection.map(d => d.fixedSelection1), graphicsLanguage: payload.graphicsLanguage.map(d => d.language), model: payload.model.map(d => d.model), fixtures: payload.fixtures.map(d => d.fixture), status: payload.status.map(d => d.status), fixtureDescription: payload.fixtureDescription.map(d => d.fixtureDescription) }
+                storeData: { result: payload.result, executionResult: payload.executionResult.map(d => d.executionTier1), fixedSelection: payload.fixedSelection.map(d => d.fixedSelection1), graphicsLanguage: payload.graphicsLanguage.map(d => d.language), model: payload.model.map(d => d.model), fixtures: payload.fixtures.map(d => d.fixture), glidvalues: payload.glidvalues && payload.glidvalues.map(d => d.glid), status: payload.status.map(d => d.status), fixtureDescription: payload.fixtureDescription.map(d => d.fixtureDescription) }
             }
         case "STORE_INFO_DETAILS":
 
@@ -92,6 +96,11 @@ export default function (state = initialState, action) {
                 storeFixtureDetails: {
                     fixtureInstaller: payload
                 }
+            }
+        case "activity":
+            return{
+                ...state,
+                activity:{ result: payload}
             }
         case "UPDATE_FLOOR_PLAN":
             return {

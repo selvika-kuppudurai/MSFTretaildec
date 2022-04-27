@@ -356,6 +356,7 @@ export default class SimpleReactValidator {
 
   allValid() {
     for (let key in this.fields) {
+      console.log(key)
       if (this.fieldValid(key) === false) {
         return false;
       }
@@ -364,6 +365,8 @@ export default class SimpleReactValidator {
   }
 
   fieldValid(field) {
+    console.log(this.fields)
+    console.log(this.fields[field])
     return this.fields.hasOwnProperty(field) && this.fields[field] === true;
   }
 

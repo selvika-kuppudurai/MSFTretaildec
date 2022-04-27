@@ -39,11 +39,13 @@
 .MuiInput-underline:hover:not(.Mui-disabled):before {
   border-bottom: 2px solid #3f51b5 !important;
 }
+.tabledesignforfixtureManage{
 .MuiInputBase-input {
   font-size: 14px !important;
   color: #a6a6a6 !important;
   font: initial !important;
   font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
 }
 
 .MuiMenuItem-root {
@@ -60,6 +62,9 @@
   border-radius: 5px !important;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.12) !important;
   max-height: 510px !important;
+}
+.MuiTableCell-body {
+  text-align: center !important;
 }
 }
 
@@ -152,9 +157,7 @@
   margin-left: 5% !important;
   margin-right: 5% !important;
 }
-.MuiTableCell-body {
-  text-align: center !important;
-}
+
 
 // .table__style {
 //   min-height: 200px;

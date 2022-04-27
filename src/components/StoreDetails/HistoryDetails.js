@@ -56,6 +56,8 @@ const HistoryDetails = ({ assetDetailsVisibility, data}) => {
         data = sortedData
         console.log(data)
     }
+
+    console.log(data)
     return (
         <div className='mt-sm-4 widthdesignforhistory '>
   <div className="col-lg-12 col-md-12 col-sm-12 justify-content-end">

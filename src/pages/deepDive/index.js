@@ -40,6 +40,7 @@ import CSVicon from '../../assets/images/CSVicon.png'
 import Button from "@material-ui/core/Button"
 // import addstoreimg from '../../assets/images/Add Store.PNG'
 
+// deepdive table columns
 const columns = [
     { id: 'glid', label: 'Global ID', className: "text-c2 fw-700", width: "8%" },
     { id: 'region', label: 'Region', className: "text-c2 fw-700", width: "8%" },
@@ -56,6 +57,7 @@ const columns = [
    
 ];
 
+// after click the GLID fixture detail header columns 
 const columnsforfixturedeatilafterclick = [
     { id: 'Model', label: 'Program Model', className: "text-c2 fw-700", width: "8%" },
     { id: 'Asset Tag ID', label: 'Asset Tag ID', className: "text-c2 fw-700", width: "8%" },
@@ -69,6 +71,7 @@ const columnsforfixturedeatilafterclick = [
 
 ];
 
+// csv header
 const headerforcsv = [{ key: 'glid', label: 'Global ID' },
 { key: 'region', label: 'Region' },
 { key: 'country', label: 'Country' },
@@ -81,12 +84,6 @@ const headerforcsv = [{ key: 'glid', label: 'Global ID' },
 { key: 'activeAssetTagID', label: '#Active Assets' },
 { key: 'inactiveAssetTagID', label: '#Inactive Assets' },
 ]
-
-const pdfvalues = [
-    { glid: 10324, region: 'dasdas', country: 'india', retailer: 'jasddas', storeName: 'dasdas', stateProvince: 'fgsddsd', city: 'dasdasd', address: 'ddfkjnksjdsf kshddkjasd aosdasd', zip: '624109', assetTagId: '765432' }
-]
-
-
 
 
 const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstaller, dispatch, checkGlId }) => {
@@ -137,6 +134,7 @@ const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstalle
     //     console.log(columns)
     //     }
 
+// function for api calling
     const sendData = (data) => {
         console.log('datafilter', Object.values(data).some((d) => d))
         // setfilterdetailsfordeepdive(data)
@@ -161,6 +159,8 @@ const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstalle
         // }
 
     }
+
+    // fixture detail and installer detail function
     const assetDetailsVisibility = (data) => {
         showAssetDetails(data)
         // console.log('bbbbbb', storedetailsforcard.glid)
@@ -182,6 +182,7 @@ const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstalle
         }
     }, [])
 
+    // setting the display variable for 2D 3D floor plan Quard installation images 
     useEffect(() => {
 
         if (carouselData) {
@@ -266,12 +267,13 @@ const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstalle
     //     doc.save("report.pdf")
     //   }
 
+// function for table data in deepdive
     const setTableDatafordeepdivefordata = (data) => {
         setTableDatafordeepdive(data)
         setTableData(data)
 
     }
-
+// function for pagination in deepdive 
     const handlePagination = (currentPage) => {
 
         let firstRecord = 0;
@@ -301,7 +303,7 @@ const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstalle
 
     }
 
-
+// call when apply the filter
     const testingfordeepdive = (filtervaluesfordeepdive) => {
         console.log(filtervaluesfordeepdive)
         dispatch({ type: "TWO_D_FILES", payload: [] })
@@ -441,13 +443,13 @@ const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstalle
 
         }
     }
-
+// history table function
     const historyDataload = (glid) => {
         const url = endPoints.deepDive.table_Data + `/GetHistoryDetails?GLIDCode=${glid}`
         axios.get(url).then(res => setTableDataforhistory(res.data))
 
     };
-
+// for deepdive table row highlight
     const handleClick = (event, index) => {
         setstoredetail(event)
         setvalll(index)
@@ -510,6 +512,7 @@ const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstalle
         }
     }
 
+    // cancel button 
     const cancel = () => {
 
         dispatch({ type: "GLID_CLEAR" })
@@ -517,13 +520,13 @@ const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstalle
         setEditModal(false)
         setDetailsModal(false)
     }
-
+// edit button
     const editStore = (glid) => {
         dispatch({ type: "GLID_INPUT", payload: glid })
         checkGlId(glid)
         setEditModal(true)
     }
-
+// images api call
     const glidclickfunction = (data) => {
 
         setvaluefordialoguebox(data)
@@ -539,19 +542,20 @@ const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstalle
         console.log('g')
     }
 
-    const searchTable = (e) => {
+    // const searchTable = (e) => {
 
-        let query = unFilteredTable.map(item => item).filter(d => d.glid.includes(e.target.value))
-        console.log("querydata", query)
+    //     let query = unFilteredTable.map(item => item).filter(d => d.glid.includes(e.target.value))
+    //     console.log("querydata", query)
 
-        const lastRecord = 1 * query.length;
-        const firstRecord = lastRecord - query.length;
+    //     const lastRecord = 1 * query.length;
+    //     const firstRecord = lastRecord - query.length;
 
-        // setStart(firstRecord)
-        // setEnd(lastRecord)
-        // setTableDatafordeepdive(query)
-    }
+    //     // setStart(firstRecord)
+    //     // setEnd(lastRecord)
+    //     // setTableDatafordeepdive(query)
+    // }
 
+    // function for storemodal(dialogue box)
     const openStoreModal = (data) => {
         dispatch({ type: "GLID_INPUT", payload: storedetailsforcard.glid })
         checkGlId(storedetailsforcard.glid).then(() => {
@@ -559,8 +563,6 @@ const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstalle
         })
 
     }
-    console.log('jj',carouselData.threeDImages)
-    console.log('kk',load3DImage)
 
     return (
 
@@ -598,7 +600,7 @@ const DeepDive = ({ userDetails, loadCarouselData, carouselData, fixtureinstalle
                 </div>
 
 
-                <div className="col-lg-12   pt-4 table-container deep__dive--table ml-2 mr-2">
+                <div className="col-lg-12   pt-4 table-container customtable deep__dive--table ml-2 mr-2">
                
                     <CustomTable columns={columns} onSort={(data) => onSort(data)} tableLength={table__Data.length} handlePagination={(data) => handlePagination(data)} showPagination={true} loader={table__loader} >
 

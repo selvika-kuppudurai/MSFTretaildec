@@ -8,7 +8,7 @@ const { Option } = Select;
 
 
 
-export class NormalSelect extends Component {
+export class NormalSelect1 extends Component {
 
   constructor() {
     super();
@@ -18,7 +18,10 @@ export class NormalSelect extends Component {
 
 
 
+
+
   }
+
 
 
 
@@ -28,37 +31,49 @@ export class NormalSelect extends Component {
 
       options = [],
 
-      handleChange,
+      handleimportfunction,
+      onSearch,
       disabled = false,
-      mode = "multiple",
-      values = []
+      mode = "single",
+      values = '',
+      models = ''
     } = this.props;
-console.log('ssss', handleChange)
+console.log('ssss', handleimportfunction)
 console.log('ssss', values)
-
 
 
 
     return (
       <div>
         <Select
-          mode={mode}
-          placeholder="Please select"
-          onChange={handleChange}
+        models = {models}
+         placeholder={models}
+        className="widthfordropdown ml-2"
+        showSearch
+        optionFilterProp="children"
+        onSearch={onSearch}
+        filterOption={(input, option) =>  
+          option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0 
+          || option.props.value.toLowerCase().indexOf(input.toLowerCase()) >= 0
+        }
+       
+          onChange={handleimportfunction}
           maxTagCount={0}
-          style={{ width: '100%' }}
+          
           allowClear={true}
+      
           // value={values.length > 0 ? values.map(v => v) : []}
-          value={values}
+          value={values === '' ? undefined : values}
           disabled={disabled}
         >
 
           {options.length > 0 && options.map((option, index) => (
             <option
               value={option}
-              key={`${option}_${index}`}
+           
+            //   key={`${option}_${index}`}
             >
-              {option}
+           {option}
             </option>
           ))}
 

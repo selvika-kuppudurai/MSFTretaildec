@@ -5,6 +5,7 @@
     font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial,
       sans-serif;
   }
+
   .btn_Fixture_And_Inst {
     flex-wrap: wrap;
     justify-content: flex-end !important;
@@ -13,14 +14,17 @@
       sans-serif;
     // text-align: center !important;
   }
+
   .btn_Con_Fixture_And_Inst {
     justify-content: flex-end !important;
   }
+
   .previous {
     margin-top: 20px;
     margin-bottom: 20px;
   }
 }
+
 .MuiButton-root {
   min-width: 90px !important;
 }
@@ -39,15 +43,18 @@
 
 .maxwidthformaterialdatepicker {
   width: 8% !important;
+
   .MuiInputLabel-animated {
     font-size: 12px !important;
     //   transform: translate(0, 1.5px) scale(0.75);
     // transform-origin: top left;
   }
+
   .MuiInputLabel-shrink {
     transform: translate(0, 1.5px) scale(0.75);
     transform-origin: top left;
   }
+
   .MuiFormControl-marginNormal {
     margin-top: 16px;
     margin-bottom: 8px;
@@ -77,6 +84,7 @@
 
 .maxwidthformaterialdesc {
   width: 12% !important;
+
   .MuiFormControl-root {
     min-width: 90% !important;
   }
@@ -92,24 +100,26 @@
     label {
       font-size: 1.2rem;
     }
-    
+
   }
 }
 
-.commonforall{
-  .MuiDialog-paperWidthSm{
+.commonforall {
+  .MuiDialog-paperWidthSm {
     max-width: 101% !important;
     width: 76%;
-    }
-    .MuiDialog-paper{
-      overflow-x: hidden !important;
-    }
-    .MuiDialogContent-root{
-      overflow-x: hidden !important;
-    }
+  }
+
+  .MuiDialog-paper {
+    overflow-x: hidden !important;
+  }
+
+  .MuiDialogContent-root {
+    overflow-x: hidden !important;
+  }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 300px) and (max-width: 1600px) {
   .MuiInputBase-input {
     // width: 6rem !important;
     font-size: 13px !important;
@@ -119,39 +129,76 @@
     width: 9rem;
   }
 
+
   .fixture__installer {
-    .materialModal:hover{
+    .materialassettag {
+      .MuiInputBase-input {
+        width: 6rem !important;
+        font-size: 13px !important;
+      }
+    }
+
+    .materialassettag1{
+       .MuiInputBase-input {
+        width: 6rem !important;
+        font-size: 13px !important;
+        color: #006400 !important;
+      }
+      .MuiSelect-selectMenu {
+        color: #006400 !important;
+      }
+    }
+
+    .materialModal:hover {
       overflow: visible;
     }
+
     .MuiInputBase-input {
-      width: 6rem !important;
+      width: 9rem !important;
       font-size: 13px !important;
     }
+
     .MuiTableCell-root {
       padding: 12px !important;
     }
+
     table {
       margin-left: 0 !important;
 
       .MuiTableCell-body {
         text-align: left !important;
       }
+
       .MuiTableCell-stickyHeader {
         background-color: #eaeaea !important;
         color: #333333 !important;
         width: 10% !important;
       }
-      .MuiSelect-selectMenu {
+
+        // .MuiSelect-selectMenu {
+        //   width: 7rem !important;
+        //   padding-left: 0 !important;
+        // }
+
+      .materialModalcolorchange{
+        width: 7rem !important;
+        padding-left: 0 !important;
+        color: #006400 !important;
+        .MuiSelect-selectMenu {
+          color: #006400 !important;
+        }
+      }
+
+      .materialModal {
         width: 7rem !important;
         padding-left: 0 !important;
       }
 
-      .materialModal {
-        width: 6rem !important;
-        padding-left: 0 !important;
+      .materialDesc {
+        max-width: 13rem !important;
       }
 
-      .materialDesc {
+      .materialDesc1 {
         max-width: 13rem !important;
       }
     }
@@ -159,10 +206,11 @@
     // .makeStyles-container-2 {
     //   max-height: 88rem !important;
     // }
-    .MuiTableContainer-root{
+    .MuiTableContainer-root {
       max-height: 88rem !important;
     }
   }
+
   .ant-picker-input {
     input {
       font-size: 1.3rem !important;
@@ -176,9 +224,116 @@
     font-size: 13px;
     background-color: #0079c0;
   }
+
   .MuiButton-contained:hover {
     background-color: #0079c0 !important;
   }
+
+  .disabled {
+    cursor: not-allowed !important;
+  }
+}
+
+.replicatebutton {
+  text-align: end;
+}
+
+.inputdesignforupload {
+  width: 250px;
+}
+
+.inputdesignforupload1 {
+  width: 200px;
+}
+
+.replicatebutton1 {
+  @media only screen and (min-width: 1000px) and (max-width: 1340px) {
+    width: 26%;
+    
+  }
+
+  @media only screen and (min-width: 1300px) and (max-width: 1500px) {
+    width: 20%;
+    margin-right: 2%;
+
+  }
+
+  @media only screen and (min-width: 1500px) and (max-width: 1700px) {
+    width: 20%;
+    margin-right: 2%;
+  }
+
+  @media only screen and (min-width: 1700px) and (max-width: 2000px) {
+    width: 16%;
+    margin-right: 5%;
+  }
+
+  @media only screen and (min-width: 2000px) and (max-width: 2700px) {
+    width: 15%;
+    margin-right: 6%;
+  }
+
+  @media only screen and (min-width: 2700px) and (max-width: 3000px) {
+    width: 14%;
+    margin-right: 7%;
+  }
+
+  @media only screen and (min-width: 3000px) and (max-width: 5000px) {
+    width: 9%;
+    margin-right: 4%;
+  }
+
+  // @media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  //   width: 18%;
+  // }
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    width: 18%;
+  }
+
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+  border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  // font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  font-size: 13px;
+
+  // width: 172px;
+  // background-color: #0079c0;
+  background-color: #0079c0;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, .20),
+  0px 4px 5px 0px rgba(0, 0, 0, .14),
+  0px 1px 10px 0px rgba(0, 0, 0, .12) !important;
+
+  // box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  border: none;
+  color: white;
+
+}
+
+// .widthfordialoguebox{
+//   width: 600px !important;
+// }
+.paddingrightfordownload {
+  padding: 5%;
+}
+
+.marginleftforico {
+  // @media only screen and (min-width: 900px) and (max-width: 5000px) {
+  margin-left: 3%;
+  
+}
+
+.marginleftforico4 {
+  @media only screen and (min-width: 950px) and (max-width: 5000px) {
+    margin-left: 4%;
+    }
 }
 
 .add__asset_save {
@@ -187,6 +342,7 @@
     font-size: 13px;
     background-color: green;
   }
+
   .MuiButton-contained:hover {
     background-color: green !important;
   }
@@ -198,24 +354,107 @@
     font-size: 13px;
     background-color: #a6a6a6;
   }
+}
+
+.successicon {
+  fill: green;
+}
+
+.add__asset__validation {
+  button {
+    color: #fff;
+    font-size: 13px;
+    background-color: #0078d4 !important;
+    width: auto !important;
+  }
+
   .MuiButton-contained:hover {
     background-color: #a6a6a6 !important;
   }
 }
+
+
+
+
 .fixture__installer {
   table {
     th {
       font-size: 1.185rem !important;
     }
   }
+
   .MuiInputBase-input {
     font-size: 14px !important;
+  }
+
+  .MuiInputBase-input {
+    font-size: 14px !important;
+    color: #a6a6a6 !important;
+    font: initial !important;
+    font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  }
+
+  .materialDesc4{
+    .MuiSelect-selectMenu {
+      color: #006400 !important;
+      height: auto;
+      width: 110px !important;
+      overflow: hidden;
+      /* min-height: 0.1876em; */
+      white-space: nowrap;
+      text-overflow: ellipsis !important;
+    }
   }
 
   .materialDesc {
     .MuiSelect-selectMenu {
       height: auto;
       width: 110px !important;
+      overflow: hidden;
+      /* min-height: 0.1876em; */
+      white-space: nowrap;
+      text-overflow: ellipsis !important;
+    }
+  }
+
+  .materialDescforstatus1{
+
+    .MuiSelect-selectMenu {
+      color: #006400 !important;
+      height: auto;
+      width: 70px !important;
+      overflow: hidden;
+      /* min-height: 0.1876em; */
+      white-space: nowrap;
+      text-overflow: ellipsis !important;
+    }
+  }
+
+  .materialDescforstatus {
+    .MuiSelect-selectMenu {
+      height: auto;
+      width: 70px !important;
+      overflow: hidden;
+      /* min-height: 0.1876em; */
+      white-space: nowrap;
+      text-overflow: ellipsis !important;
+    }
+  }
+.materialDescforproposeddate{
+  .ant-picker-input > input{
+    color: #006400 !important;
+  }
+}
+  .materialDescforinstaller1{
+    .MuiInputBase-input {
+      color: #006400 !important;
+    }
+  }
+
+  .materialDesc1 {
+    .MuiSelect-selectMenu {
+      height: auto;
+      width: 140px !important;
       overflow: hidden;
       /* min-height: 0.1876em; */
       white-space: nowrap;
@@ -236,6 +475,30 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.countdowndesign {
+  text-align: end;
+  margin-right: 7%;
+}
+
+.errormessage {
+  font-size: 14px;
+  margin: 1%;
+  color: red;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.validationSuccess {
+  font-size: 14px;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: green;
+}
+
+.validationFail {
+  font-size: 14px;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: red;
+}
+
 .textarea__box {
   textarea {
     color: #495057;
@@ -248,12 +511,152 @@ input[type="number"] {
   }
 }
 
-.headingfontsize{
+.headingfontsize {
   font-size: 16px;
 }
 
-.imagescontent{
+.imagescontent {
   font-size: 16px;
   margin-left: 5%;
   font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+}
+
+.backgroundcolor {
+  color: #333333;
+}
+
+.textaligncenter {
+  text-align: center;
+}
+
+.marginright {
+  margin-right: 6%;
+}
+
+.replicatebutton2 {
+  @media only screen and (min-width: 1300px) and (max-width: 1700px) {
+    width: 50%;
+  }
+  @media only screen and (min-width: 1700px) and (max-width: 2700px) {
+    width: 39%;
+  }
+  @media only screen and (min-width: 2700px) and (max-width: 5000px) {
+    width: 35%;
+  }
+
+  @media only screen and (min-width: 1000px) and (max-width: 1300px) {
+    width: 70%;
+  }
+
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    width: 70%;
+  }
+
+  // text-align: center;
+  // @media only screen and (min-width: 1300px) and (max-width: 1600px) {
+  //   margin-right: 10% !important;
+  // }
+
+  margin-bottom: 5px;
+  background-color: #0078d4;
+  height: fit-content;
+  border: none;
+  color: #fff;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, .20),
+  0px 4px 5px 0px rgba(0, 0, 0, .14),
+  0px 1px 10px 0px rgba(0, 0, 0, .12) !important;
+  border-radius: 5px;
+}
+
+.marginright{
+  margin-right: 10% !important;
+}
+
+.uploadbutton {
+
+  border: none;
+  background: #0078d4;
+  color: white;
+  width: 150px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, .20), 0px 4px 5px 0px rgba(0, 0, 0, .14), 0px 1px 10px 0px rgba(0, 0, 0, .12) !important;
+
+}
+
+.colorblack {
+  color: #333333;
+}
+
+.marginleft {
+  margin-left: 20%;
+}
+
+.rotatecss {
+  transform: rotate(180deg);
+  color: #333333;
+}
+
+.inputfieldwidth {
+  width: 450px;
+}
+
+.uploadbuttonfordownload {
+  border: none;
+  background: #0078d4;
+  color: white;
+  width: 150px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, .20), 0px 4px 5px 0px rgba(0, 0, 0, .14), 0px 1px 10px 0px rgba(0, 0, 0, .12) !important;
+
+}
+.widthfordialoguebox{
+  .MuiDialogActions-root{
+    justify-content: center !important;
+  }
+}
+
+.fontweigntasset{
+  font-weight: 600;
+}
+
+.margintop{
+  margin-top: 2%;
+}
+
+.fontweightforcount{
+  margin-top: 1%;
+  font-weight: 600;
+
+}
+
+.paading{
+  // padding: 2%;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.headingfordialgoebox{
+  
+  color: #0078d4 !important;
+    font-size: 18px !important;
+    font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 22px;
+    word-wrap: break-word;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.contentdesignindialoguebox{
+  font-size: 1.5rem;
+  font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 22px;
+  word-wrap: break-word;
+}
+
+.colororange{
+  color: #006400;
+  font-size: 1.5rem;
+    margin-top: 2px;
 }

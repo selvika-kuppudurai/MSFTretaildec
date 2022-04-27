@@ -16,7 +16,7 @@ import PageLoader from "../../components/Common/PageLoader";
 const Dashboard = ({ dispatch }) => {
 
     const [dialogueopenandclose, setdialogueopenandclose] = useState(true)
-
+// function for api calling
     const sendData = (data) => {
         console.log(Object.values(data))
 
@@ -59,7 +59,7 @@ const Dashboard = ({ dispatch }) => {
             testing2({}, true)
         }
     }, [])
-
+// summary page api calling
     const testing2 = (filtervalues, loadervalue) => {
 
         if (Object.keys(filtervalues).length === 0) {

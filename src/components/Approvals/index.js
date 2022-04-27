@@ -7,6 +7,7 @@ import Activitytab from '../../components/Common/Activity'
 
 import './approvalsdesign.scss';
 
+// tabs inside the approvals
 export default function Approvals() {
   return (
     

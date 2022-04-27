@@ -20,21 +20,7 @@ import moment from 'moment';
 import { loadUserActivity } from '../../redux/actions/userActivity';
 import Loader from 'react-loader-spinner';
 
-
-function createData(StoreID, Updatedby, changes, ApprovalStatus, ApprovalactionBy, Timestamp) {
-    return { StoreID, Updatedby, changes, ApprovalStatus, ApprovalactionBy, Timestamp };
-}
-
-const rows = [
-    createData('32087', 'User1', 'Fixtures', 'APPROVED', 'Admin1', '6/21/2021 6PM'),
-    createData('32088', 'User1', 'Fixtures', 'APPROVED', 'Admin1', '6/21/2021 6PM'),
-    createData('32089', 'User1', 'Fixtures', 'APPROVED', 'Admin1', '6/21/2021 6PM'),
-    createData('32081', 'User1', 'Fixtures', 'REJECTED', 'Admin1', '6/21/2021 6PM'),
-    createData('32082', 'User1', 'Fixtures', 'APPROVED', 'Admin1', '6/21/2021 6PM'),
-    createData('32083', 'User1', 'Fixtures', 'APPROVED', 'Admin1', '6/21/2021 6PM'),
-    createData('32084', 'User1', 'Fixtures', 'REJECTED', 'Admin1', '6/21/2021 6PM')
-];
-
+// sorting 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
         return -1;
@@ -44,13 +30,13 @@ function descendingComparator(a, b, orderBy) {
     }
     return 0;
 }
-
+// sorting 
 function getComparator(order, orderBy) {
     return order === 'desc'
         ? (a, b) => descendingComparator(a, b, orderBy)
         : (a, b) => -descendingComparator(a, b, orderBy);
 }
-
+// sorting
 function stableSort(array, comparator) {
     const stabilizedThis = array.map((el, index) => [el, index]);
     stabilizedThis.sort((a, b) => {
@@ -61,6 +47,7 @@ function stableSort(array, comparator) {
     return stabilizedThis.map((el) => el[0]);
 }
 
+// table header column
 const headCells = [
     { id: 'glid', numeric: false, disablePadding: false, label: 'Global ID' },
     { id: 'storeName', numeric: false, disablePadding: false, label: 'Store Name' },

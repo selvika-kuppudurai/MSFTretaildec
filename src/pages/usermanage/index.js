@@ -32,7 +32,7 @@ import "../../components/Common/CustomTable/style.scss"
 import { CSVLink, CSVDownload } from "react-csv";
 import CSVicon from '../../assets/images/CSVicon.png'
 
-
+// user table header
 const columns = [
     { id: '#', label: '#', className: "text-c2 fw-700", width: "8%" },
     { id: 'name', label: 'User Name', className: "text-c2 fw-700", width: "8%" },
@@ -43,6 +43,7 @@ const columns = [
     { id: 'Actions', label: 'Actions', className: "text-c2 fw-700", width: "8%" },
 ];
 
+// user table csv header
 const headerforcsv = [
 { key: 'name', label: 'User Name' },
 { key: 'email', label: 'Email' },
@@ -86,10 +87,12 @@ const Usermanage = () => {
     const [table__loader, setLoader] = useState(true)
 
     const Roles = ['Admin', 'Country Lead', 'Fixture Manufacturer', 'Installer', 'Store Planner']
+    // getting roles api
     useEffect(() => {
         userdeatils()
         // createuserdeatils()
     }, [])
+    // function for roles
     const userdeatils = () => {
         const url = endPoints.deepDive.table_Data + '/GetAllRoles'
 
@@ -101,6 +104,7 @@ const Usermanage = () => {
         })
     }
 
+// function for edit the user table
     const selectedvalueforeditrow = (selectedrow) => {
         setselectedrowvalue(selectedrow)
         showtheformpage(true)
@@ -108,14 +112,17 @@ const Usermanage = () => {
 
     const [Role, setRole] = React.useState('');
 
+// roles fropdown function
     const handleChange = (event) => {
         setRole(event.target.value);
 
     };
+// function for cancel button in delete dialogue box
     const handleCancelthedelete = () => {
         setopenthedeleteuserdetails(false)
     }
 
+    // delete the user 
     const handleClosethedelete = () => {
         const headers = {
             "Content-Type": "application/json",
@@ -139,7 +146,7 @@ const Usermanage = () => {
             });
         setopenthedeleteuserdetails(false)
     }
-
+// roles update
     const handleClose = () => {
         const url = endPoints.deepDive.table_Data + `/Roles Update?UserName=${selectedrowvalue.email}&RoleName=${Role}`
 
@@ -154,12 +161,13 @@ const Usermanage = () => {
 
         })
     }
-
+// delete user
     const deleteuserdetails = (userdeatilsfordelete) => {
         setopenthedeleteuserdetails(true)
         setuserdetailfordelete(userdeatilsfordelete.email)
     }
 
+    // table sort
     const onSort = (sortKey) => {
         const sortedDataforUsertable = TableSort(rows, sortKey)
         settestfunction(sortedDataforUsertable)
