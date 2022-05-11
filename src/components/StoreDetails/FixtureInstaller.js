@@ -158,6 +158,11 @@ class FixtureInstaller extends React.Component {
                     editaddset: false,
                     installationimagedisable: false,
                     colorchange: false,
+                    count: 0,
+                    LastAssetFlag: 0,
+                    fixturedescriptionforexisting: "",
+                    fixturesforexisting: "",
+
 
 
 
@@ -171,6 +176,7 @@ class FixtureInstaller extends React.Component {
 
 
             ],
+          
             dateduplicates: [],
             idxtoupdate: [],
             materialvalue: [{
@@ -179,8 +185,10 @@ class FixtureInstaller extends React.Component {
             ],
             modelimport: '',
             glidvalues: '',
+           
             checkassetforupload: false,
             copyformglid: false,
+            countlength: 0,
 
 
             dialogue: false,
@@ -189,6 +197,7 @@ class FixtureInstaller extends React.Component {
             materialinforvalidationcheck: false,
             imagevalidationcheck: false,
             assetdeplicatecheck: false,
+
             
 
 
@@ -237,6 +246,7 @@ class FixtureInstaller extends React.Component {
         validateasset: [],
         table__loader: true,
         
+        
         name: '',
         typing: false,
         typingTimeout: 0,
@@ -284,9 +294,17 @@ class FixtureInstaller extends React.Component {
     addMaterialRow = () => {
 
         const { formFields: { materialInfoList } } = this.state
+        const {formFields} = this.state
 
 
         const { storeDrpdwns, userDetails } = this.props
+
+        // let i = formFields.countlength + 1
+        // console.log('count', i)
+        // formFields.countlength = i
+        // console.log('count', formFields.countlength)
+        // this.setState({formFields})
+
 
         materialInfoList.push({
             model: "",
@@ -310,6 +328,10 @@ class FixtureInstaller extends React.Component {
             clickallfunctionlity: true,
             dialogueboxforautofill: false,
             colorchange: false,
+            count: 0,
+            LastAssetFlag: 0,
+            fixturedescriptionforexisting: [],
+            fixturesforexisting: [],
             fieldDisable: (userDetails.role === "Installer" || "Fixture Manufacturer") ? false : true,
             modelOptions: storeDrpdwns.model ? storeDrpdwns.model : [],
             fixtureOptions: storeDrpdwns.fixtures ? storeDrpdwns.fixtures : [],
@@ -317,6 +339,7 @@ class FixtureInstaller extends React.Component {
         })
 
         this.setState({ materialInfoList })
+        console.log('vbvbvbvbvbvvbv', materialInfoList)
 
     }
     setdialoguebox = (val) => {
@@ -347,8 +370,11 @@ class FixtureInstaller extends React.Component {
     handleMaterialInfoList = async (index, type) => {
 
         const { formFields: { materialInfoList } } = this.state
+        // const {formFields}
+       
 
         const { formFields } = this.state
+        console.log('countlenth', formFields)
         formFields['clickasset'] = true
 
         // console.log(formFields.showsumbitbutton)
@@ -368,6 +394,7 @@ class FixtureInstaller extends React.Component {
         // }
 
         if (type === "add") {
+
             materialInfoList['editaddset'] = true
             if (this.materialInfoValidator.allValid() && materialInfoList.every(d => !d.assetDuplicate)) {
 
@@ -392,6 +419,17 @@ class FixtureInstaller extends React.Component {
                 this.materialInfoValidator.showMessages()
             }
         } else {
+            console.log('lengthh', this.props.storeDrpdwns.materialInfo.length)
+            if(materialInfoList.length > this.props.storeDrpdwns.materialInfo.length  ) {
+                // this.props.storeDrpdwns.materialInfo.map(res => {
+
+                // })
+                if(this.props.storeDrpdwns.materialInfo.length <= index){
+                for(let i = index; i < materialInfoList.length; i++){
+                    materialInfoList[i].count = materialInfoList[i].count - 1
+                }
+            }
+            }
 
             if (materialInfoList.length >= 2) {
                 materialInfoList.splice(index, 1)
@@ -401,8 +439,9 @@ class FixtureInstaller extends React.Component {
                 }
             }
         }
-
+    
         this.setState({ materialInfoList })
+        console.log('countcheck',materialInfoList)
     }
 
     // checking assettagid in database
@@ -1113,9 +1152,11 @@ class FixtureInstaller extends React.Component {
         const { storeData, storeDrpdwns } = this.props
 
         let { formFields } = Object.assign({}, this.state);
+        console.log('getformdetails')
 
 
         if (storeDrpdwns.materialInfo) {
+            console.log('getformdetailsif')
 
             // inject "assetDisable" property
             let updatedList = storeDrpdwns.materialInfo.map((d) => {
@@ -1132,7 +1173,15 @@ class FixtureInstaller extends React.Component {
                 return o
             })
 
-            updatedList.map((d) => {
+            updatedList.map((d, index) => {
+                console.log('d.model',d.model)
+                if(d.model === "MISX") {
+                    d.fixturesforexisting = storeDrpdwns.fixturesforexisting ? storeDrpdwns.fixturesforexisting.misxFixture : []
+                } else if (d.model === 'Surface'){
+                    d.fixturesforexisting = storeDrpdwns.fixturesforexisting ? storeDrpdwns.fixturesforexisting.surfaceFixture : []
+
+                }
+                d.fixturedescriptionforexisting = storeDrpdwns.fixturedescriptionforexisting[index] ? storeDrpdwns.fixturedescriptionforexisting[index] : []
                 d.modelOptions = storeDrpdwns.model ? storeDrpdwns.model : []
                 d.fixtureOptions = storeDrpdwns.fixtures ? storeDrpdwns.fixtures : []
                 d.fixtureDescOptions = storeDrpdwns.fixtureDescription ? storeDrpdwns.fixtureDescription : []
@@ -1145,6 +1194,7 @@ class FixtureInstaller extends React.Component {
 
 
         } else {
+            console.log('getformdetailselse')
 
             formFields.materialInfoList.map((d) => {
                 d.modelOptions = storeDrpdwns.model ? storeDrpdwns.model : []
@@ -1526,10 +1576,12 @@ class FixtureInstaller extends React.Component {
     }
 
     handleMaterialInfoListValues = (event, idx) => {
+        
         // this.checkAsset(materialInfoList[idx].assetTagId, idx)
         // console.log("sdfalshfahsfjkasf11111", event.target.name)
         let { formFields } = this.state
         let materialInfoList = formFields.materialInfoList
+
         if (event.target.name === "status") {
             formFields.idxtoupdate = idx
             this.setState({ clickallfunctionlity: false })
@@ -1734,8 +1786,10 @@ class FixtureInstaller extends React.Component {
 
 
         materialInfoList[idx][event.target.name] = event.target.value
+        formFields.materialInfoList[idx].count = idx + 1
 
         this.setState({ formFields })
+        console.log('countcheck', formFields)
 
     }
 
@@ -2648,6 +2702,8 @@ class FixtureInstaller extends React.Component {
     }
 
 
+
+
     handleimportfunction(e, val) {
         const { formFields } = this.state
         if (val === 'Model') {
@@ -2765,21 +2821,7 @@ class FixtureInstaller extends React.Component {
         console.log('search:', val);
       }
 
-      download() {
-          const {formFields} = this.state
-          console.log('download', this.state.formFields)
-          formFields.materialInfoList.map((res, index) => {
-            if(res.actualInstallationDate.split('T') > 0){
-                let val = res.actualInstallationDate.split('T')[0]
-                formFields.materialInfoList[index].actualInstallationDate = val
-            }
-
-          })
-
-          this.setState({formFields})
-          console.log('download', this.state.formFields)
-          
-      }
+      
     render() {
 
         const { formFields, formLoader, assetError, copysuccessfullymessage, copyerrormessage, showcopyinput, checkassetsuccessfulmessage, uploadiconshow, dialogueboxforbeforeupload, assetCheckLoader, showRemainChars, showsumbitbutton, imagevalidation, materialinfovalidation, showvalidationinformation, assetduplicatevalidation, showsubmitbuttonvalidation, checkassetfunctionvalidationcheck, loadingvalidation, vali, clickallfunctionlity, idxtoupdate, dialogueboxforautofill, warningbox, fileNameduplicate, table__loader } = this.state
@@ -2788,6 +2830,12 @@ class FixtureInstaller extends React.Component {
         const { installationImage } = this.props
 
         const { glidvalues } = this.props.storeDrpdwns
+
+
+        const {  fixturedescriptionforexisting } = this.props.storeDrpdwns 
+        console.log('fixturedescriptionforexisting', fixturedescriptionforexisting)
+
+        
         console.log("materiallist", this.props)
         console.log("materiallist", this.props.storeDrpdwns)
 
@@ -2800,11 +2848,53 @@ class FixtureInstaller extends React.Component {
             this.setState({ formFields })
         };
 
+        
+        // formFields.countlength = this.props.storeDrpdwns.materialInfo.length
 
+        // this.setState({formFields})
 
-
+    //    this.setState({countlength: this.props.storeDrpdwns.materialInfo.length})
+       
+        // let i = 0
         const { materialInfoList } = this.state.formFields
+        
+        materialInfoList.map((res, index) => {
+            // if(res.model === 'MISX'){
+            //     res.
+            // }
+            console.log('lengthhh', materialInfoList.length - 1)
+            console.log('lengthhh', index)
+            if(materialInfoList.length - 1 === index) {
+                console.log('99999eee')
+            }
+            console.log('res.actualInstallationDate', res.proposedInstallationDate)
+            if(res.actualInstallationDate && res.actualInstallationDate != '1900-01-01T00:00:00'){
+            res.actualInstallationDate = moment(res.actualInstallationDate).format("YYYY-MM-DD")
+            } else {
+                res.actualInstallationDate = ''
+            }
+            if (res.proposedInstallationDate && res.proposedInstallationDate != '1900-01-01T00:00:00') {
+                res.proposedInstallationDate = moment(res.proposedInstallationDate).format("YYYY-MM-DD")
+            } else {
+                res.proposedInstallationDate = ''
+            }
+        })
+
+        // this.setState({materialInfoList})
+        // for(let i = 0; i<fixturedescriptionforexisting.length; i++ ){
+        //     materialInfoList[i].fixturedescriptionforexisting = fixturedescriptionforexisting[i]
+        // }
+        // fixturedescriptionforexisting.map(res =>
+        //     {
+                
+        //     })
+
+
+            console.log('fixturedescriptionforexisting', materialInfoList)
+
+       
         console.log('materiallist', formFields)
+
 
         // console.log("listmaterial", formFields.materialInfoList[1].fixtureDescription)
 
@@ -2845,7 +2935,7 @@ class FixtureInstaller extends React.Component {
                                 <h3>Successfully imported {formFields.modelimport} from {formFields.glidvalues} </h3>
                             </DialogContent> */}
                             <DialogContent className="mb-4 mt-4 d-flex">
-                                    <span className="d-flex contentdesignindialoguebox">Successfully imported {formFields.modelimport} from {formFields.glidvalues}. Imported records are in <p className="colororange ml-2">green</p></span>
+                                    <span className="d-flex contentdesignindialoguebox">Successfully imported {formFields.modelimport} fixture from {formFields.glidvalues}. Imported records are in <p className="colororange ml-2">green.</p></span>
                                 </DialogContent> 
                             <DialogActions className="fixedselection mb-4">
                             <div className="mb-2 add__asset">
@@ -2859,7 +2949,7 @@ class FixtureInstaller extends React.Component {
                 {copyerrormessage && <div>
                         <Dialog open={copyerrormessage} aria-labelledby="form-dialog-title" className="widthfordialoguebox">
                             <DialogTitle id="form-dialog-title" className="mb-4"></DialogTitle>
-                            <DialogContent className="mb-4">
+                            <DialogContent className="mb-5">
                                 <h3>No record found</h3>
                             </DialogContent>
                             {/* <DialogActions className="fixedselection mb-4">
@@ -2872,7 +2962,7 @@ class FixtureInstaller extends React.Component {
                     {checkassetsuccessfulmessage && <div>
                         <Dialog open={checkassetsuccessfulmessage} aria-labelledby="form-dialog-title" className="widthfordialoguebox">
                             <DialogTitle id="form-dialog-title" className="mb-4"></DialogTitle>
-                            <DialogContent className="mb-4">
+                            <DialogContent className="mb-5">
                                 <h3>Successfully Replaced</h3>
                             </DialogContent>
                             {/* <DialogActions className="fixedselection mb-4">
@@ -3017,7 +3107,7 @@ class FixtureInstaller extends React.Component {
                             }
                             {materialInfoList.length > 0 && <div className={!clickallfunctionlity ? "marginleftforico4" : "marginleftforico"}>
                                 <CSVLink className="paddingrightfordownload" filename='data.csv' data={materialInfoList} headers={headerforcsv}>
-                                    <AiOutlineDownload onClick={() => this.download()} className="mr-4 ml-3 colorblack" title="Download as csv" size={27}></AiOutlineDownload>
+                                    <AiOutlineDownload className="mr-4 ml-3 colorblack" title="Download as csv" size={27}></AiOutlineDownload>
                                     {/* <div className="mb-2 add__asset">
                                             <Button className="uploadbuttonfordownload" title="Download as csv" variant="contained" >Download</Button>
                                         </div> */}
@@ -3054,7 +3144,7 @@ class FixtureInstaller extends React.Component {
                                 </div>} */}
                                 {/* <AiOutlineUpload size={25} title="Upload" onClick={() => this.enableuploadfunction()}></AiOutlineUpload>} */}
                                 {!uploadiconshow && <div className={fileNameduplicate && !clickallfunctionlity ? "col-lg-5 col-md-5 col-sm-6 pr-0 textalignend" : fileNameduplicate && clickallfunctionlity ? "col-lg-6 col-md-5 pr-0 textalignend " : "col-lg-12 pr-0 textalignend"}>
-                                    <input type="file"  ref={hiddenFileInput} className={fileNameduplicate ? "inputdesignforupload1 cursorpointer" : "inputdesignforupload cursorpointer"} Name="Upload" onChange={(e) => this.handleUpload(e)} onClick={(event) => {
+                                    <input type="file"   className={fileNameduplicate ? "inputdesignforupload1 cursorpointer" : "inputdesignforupload cursorpointer"} Name="Upload" onChange={(e) => this.handleUpload(e)} onClick={(event) => {
                                         event.target.value = null
                                     }} /></div>}
                                 <div className={fileNameduplicate && !clickallfunctionlity ? "col-lg-6 col-md-7 col-sm-6 textaligncenter" : clickallfunctionlity ? "col-lg-6 col-md-7 textalignend pr-0 marginright " : ""}>
@@ -3146,11 +3236,15 @@ class FixtureInstaller extends React.Component {
 
 
                                                     >
-                                                        {formFields.materialInfoList[idx].fixtureOptions && formFields.materialInfoList[idx].fixtureOptions.length > 0 && formFields.materialInfoList[idx].fixtureOptions.map((data) => {
+                                                        {formFields.materialInfoList[idx].fixturesforexisting && formFields.materialInfoList[idx].fixturesforexisting.length > 0 ? <div> { formFields.materialInfoList[idx].fixtureOptions && formFields.materialInfoList[idx].fixtureOptions.length > 0 && formFields.materialInfoList[idx].fixturesforexisting.map((data) => {
                                                             return (
                                                                 <MenuItem value={data}>{data}</MenuItem>
                                                             )
-                                                        })}
+                                                        })}</div> : <div> { formFields.materialInfoList[idx].fixtureOptions && formFields.materialInfoList[idx].fixtureOptions.length > 0 && formFields.materialInfoList[idx].fixtureOptions.map((data) => {
+                                                            return (
+                                                                <MenuItem value={data}>{data}</MenuItem>
+                                                            )
+                                                        })}</div>}
                                                     </Select>
 
                                                     {(userDetails.role === "Country Lead") && this.materialInfoValidator.message('sku', formFields.materialInfoList[idx].sku, 'requiredText')}
@@ -3177,7 +3271,7 @@ class FixtureInstaller extends React.Component {
                                                         className={formFields.materialInfoList[idx].colorchange ? "materialDesc4" : "materialDesc1"}
 
                                                     >
-                                                        {formFields.materialInfoList[idx].fixtureDescOptions && formFields.materialInfoList[idx].fixtureDescOptions.length > 0 && formFields.materialInfoList[idx].fixtureDescOptions.map((data) => {
+                                                        {formFields.materialInfoList[idx].fixturedescriptionforexisting && formFields.materialInfoList[idx].fixtureDescOptions && formFields.materialInfoList[idx].fixtureDescOptions.length > 0 && formFields.materialInfoList[idx].fixturedescriptionforexisting.map((data) => {
                                                             return (
                                                                 <MenuItem value={data}>{data}</MenuItem>
                                                             )

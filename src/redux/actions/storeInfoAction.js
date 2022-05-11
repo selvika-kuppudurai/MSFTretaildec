@@ -3,6 +3,7 @@ import axios from "axios"
 import { endPoints } from "../../config/Api"
 import emailjs from 'emailjs-com';
 import moment from "moment";
+import { Value } from "devextreme-react/range-selector";
 
 export const checkGlId = (glid) => async dispatch => {
     try {
@@ -30,16 +31,44 @@ export const checkGlId = (glid) => async dispatch => {
                 }
 
                 if (res.data.datacheck.message === "Store already Exists") {
-                    console.log('vv', res)
+                    let arrayforfixturedescription = []
+                    let url = endPoints.deepDive.table_Data + "/GetFixtureDescriptionDeatils" + "?GLIDCode=" + `${glid}`
+                    const res1 = await axios.get(url)
+                    // https://localhost:44364/api/MRRPilot/GetFixtureDescriptionDeatils?GLIDCode=@GLIDCode
+                    console.log('response1', res1)
+                    // res1.data.map(res => {
+                    //     console.log('response1', res)
+                    //     // res.map( res2 => {
+                    //     //     console.log('response1', res2)
+                    //     // })
+                    // })
 
-                    dispatch({ type: "GLID_AVAIL", payload: { repTool: false, storeError: true, result: res.data.resultquery, executionResult: res.data.executionResult, fixedSelection: res.data.fixedSelection, graphicsLanguage: res.data.graphicsLanguage, model: res.data.model, status: res.data.status, fixtures: res.data.fixtures, glidvalues: res.data.glid, fixtureDescription: res.data.fixturesDescription ? res.data.fixturesDescription : [], materialInfo: res.data.materialInfo ? res.data.materialInfo : [] } })
+                    Object.keys(res1.data).forEach(key => {
+                        let fixturedescription = []
+                       console.log('response', res1.data[key])
+                       res1.data[key].map(response => {
+                             console.log('response', response)
+                             fixturedescription.push(response.fixture_Description)
+
+                       })
+                       arrayforfixturedescription.push(fixturedescription)
+                    });
+
+                    console.log('arrayforfixturedescription', arrayforfixturedescription)
+
+                    let url2 = endPoints.deepDive.table_Data + "/GetFixtureDetails"
+                    const responsefixtures = await axios.get(url2)
+
+                    console.log('responsefixtures', responsefixtures)
+
+                    dispatch({ type: "GLID_AVAIL", payload: { repTool: false, storeError: true, result: res.data.resultquery, executionResult: res.data.executionResult, fixedSelection: res.data.fixedSelection, graphicsLanguage: res.data.graphicsLanguage, model: res.data.model, status: res.data.status, fixtures: res.data.fixtures, glidvalues: res.data.glid, fixturedescriptionforexisting: arrayforfixturedescription ? arrayforfixturedescription : [],  fixturesforexisting: responsefixtures.data ? responsefixtures.data : [] , fixtureDescription: res.data.fixturesDescription ? res.data.fixturesDescription : [], materialInfo: res.data.materialInfo ? res.data.materialInfo : [] } })
 
 
                 }
 
                 if (res.data.datacheck.message === "Store Available in Reptool") {
 
-                    dispatch({ type: "GLID_DATA_STORE", payload: { repTool: false, storeError: false, result: res.data.result, executionResult: res.data.executionResult, fixedSelection: res.data.fixedSelection, graphicsLanguage: res.data.graphicsLanguage, model: res.data.model, status: res.data.status, glidvalues: res.data.glid, fixtures: res.data.fixtures, fixtureDescription: res.data.fixturesDescription ? res.data.fixturesDescription : [] } })
+                    dispatch({ type: "GLID_DATA_STORE", payload: { repTool: false, storeError: false, result: res.data.result, executionResult: res.data.executionResult, fixedSelection: res.data.fixedSelection, fixturedescriptionforexisting : [] , graphicsLanguage: res.data.graphicsLanguage, model: res.data.model, status: res.data.status, glidvalues: res.data.glid, fixtures: res.data.fixtures, fixtureDescription: res.data.fixturesDescription ? res.data.fixturesDescription : [] } })
                 }
             }
 
@@ -144,6 +173,7 @@ export const addStore = (Glid, data1, data2, storeData, listofAdmins) => async d
     let StatusValues = data2.materialInfoList.map(d => d.status !== "" ? d.status : "null")
 
     let InstallerValues = data2.materialInfoList.map(d => d.installerName !== "" ? d.installerName : "null")
+    let AssetRowid = data2.materialInfoList.map(d => d.count !== "" ? d.count : 'null')
 
     let InstallerContactValues = data2.materialInfoList.map(d => d.installerContact !== "" ? d.installerContact : "null")
     let InstallerPhoneValues = data2.materialInfoList.map(d => d.installerPhone !== "" ? d.installerPhone : "null")

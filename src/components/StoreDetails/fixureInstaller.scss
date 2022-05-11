@@ -214,6 +214,7 @@
   .ant-picker-input {
     input {
       font-size: 1.3rem !important;
+      color: #a6a6a6 !important;
     }
   }
 }
@@ -390,7 +391,7 @@
   .MuiInputBase-input {
     font-size: 14px !important;
     color: #a6a6a6 !important;
-    font: initial !important;
+    font-weight: 400;
     font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   }
 
