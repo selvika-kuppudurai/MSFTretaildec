@@ -158,7 +158,7 @@ class FixtureInstaller extends React.Component {
                     editaddset: false,
                     installationimagedisable: false,
                     colorchange: false,
-                    count: 0,
+                    assetRowId: 0,
                     LastAssetFlag: 0,
                     fixturedescriptionforexisting: "",
                     fixturesforexisting: "",
@@ -189,6 +189,7 @@ class FixtureInstaller extends React.Component {
             checkassetforupload: false,
             copyformglid: false,
             countlength: 0,
+            count: 1,
 
 
             dialogue: false,
@@ -328,7 +329,7 @@ class FixtureInstaller extends React.Component {
             clickallfunctionlity: true,
             dialogueboxforautofill: false,
             colorchange: false,
-            count: 0,
+            assetRowId: 0,
             LastAssetFlag: 0,
             fixturedescriptionforexisting: [],
             fixturesforexisting: [],
@@ -419,24 +420,36 @@ class FixtureInstaller extends React.Component {
                 this.materialInfoValidator.showMessages()
             }
         } else {
-            console.log('lengthh', this.props.storeDrpdwns.materialInfo.length)
-            if(materialInfoList.length > this.props.storeDrpdwns.materialInfo.length  ) {
-                // this.props.storeDrpdwns.materialInfo.map(res => {
+            // console.log('lengthh', this.props.storeDrpdwns.materialInfo.length)
 
-                // })
-                if(this.props.storeDrpdwns.materialInfo.length <= index){
-                for(let i = index; i < materialInfoList.length; i++){
-                    materialInfoList[i].count = materialInfoList[i].count - 1
-                }
-            }
-            }
+            // if(this.props.storeDrpdwns.materialInfo && (materialInfoList.length >= this.props.storeDrpdwns.materialInfo.length ) ) {
+            //     // this.props.storeDrpdwns.materialInfo.map(res => {
+
+            //     // })
+            //     console.log('materialinfo', index)
+            //     console.log('materialinfo', this.props.storeDrpdwns.materialInfo.length)
+            //     if(this.props.storeDrpdwns.materialInfo.length <= index){
+            //     for(let i = index; i < materialInfoList.length; i++){
+            //         materialInfoList[i].assetRowId = materialInfoList[i].assetRowId - 1
+            //     } 
+            // } else {
+            //          formFields.count = formFields.count + 1
+            // }
+
+            // console.log('formfiled', formFields.count)
+            // } else {
+            //     for(let i = index; i < materialInfoList.length; i++){
+            //         materialInfoList[i].assetRowId = materialInfoList[i].assetRowId - 1
+            //     } 
+            // }
 
             if (materialInfoList.length >= 2) {
                 materialInfoList.splice(index, 1)
-                if (index <= this.props.storeDrpdwns.materialInfo.length) {
+
+                if (this.props.storeDrpdwns.materialInfo && (index <= this.props.storeDrpdwns.materialInfo.length)) {
 
                     this.props.storeDrpdwns.materialInfo.splice(index, 1)
-                }
+                } 
             }
         }
     
@@ -903,6 +916,7 @@ class FixtureInstaller extends React.Component {
                         }
                     })
                     if (typeof (item[9]) === 'string') {
+                        console.log('dateformat')
                         if (co) {
                             warningbox.push('yes')
                             dateduplicates.push('yes')
@@ -939,13 +953,20 @@ class FixtureInstaller extends React.Component {
                         }
 
                     } else {
+                        console.log('dateformat')
                         warningbox.push('yes')
                         dateduplicates.push('yes')
                         let converted_date = new Date(Math.round((item[9] - 25569) * 864e5));
                         converted_date = String(converted_date).slice(4, 15)
+                        console.log('dateformat', converted_date)
+                        
                         let date = converted_date.split(" ")
+                        console.log('dateformat', date)
+                
                         let day = date[1];
+                        console.log('dateformat', day)
                         let month = date[0];
+                        console.log('dateformat', month)
                         month = "JanFebMarAprMayJunJulAugSepOctNovDec".indexOf(month) / 3 + 1
                         if (month.toString().length <= 1)
                             month = '0' + month
@@ -954,8 +975,9 @@ class FixtureInstaller extends React.Component {
                             dateformat = ''
                         }
                         else {
-                            dateformat = String(day + '-' + month + '-' + year)
+                            dateformat = String(year + '-' + month + '-' + day)
                         }
+                        console.log('dateformat',dateformat)
                     }
 
                     if (typeof (item[8]) === 'string') {
@@ -1011,9 +1033,10 @@ class FixtureInstaller extends React.Component {
                             dateformatforactual = ''
                         }
                         else {
-                            dateformatforactual = String(day + '-' + month + '-' + year)
+                            dateformatforactual = String(year + '-' + month + '-' + day)
                         }
                     }
+                    console.log('dateformat', dateformat)
                     //    console.log('item[8]', item[9].getDate())
                     materialinfolist2.push({
                         model: (item[0] === undefined) ? '' : item[0],
@@ -1037,6 +1060,7 @@ class FixtureInstaller extends React.Component {
                         aid: null,
                         pid: null
                     })
+                    console.log('dateformat', materialinfolist2)
                     // sampleobject.model = (item[0] === undefined) ? '' : item[0]
                     // sampleobject.sku = (item[1] === undefined) ? '' : item[1]
                     // sampleobject.fixtureDescription = (item[2] === undefined) ? '' : item[2]
@@ -1061,7 +1085,7 @@ class FixtureInstaller extends React.Component {
 
 
 
-
+            console.log('dateformat', materialinfolist2)
             v = true
             // setFileUploaded(dataParse);
         };
@@ -1786,7 +1810,11 @@ class FixtureInstaller extends React.Component {
 
 
         materialInfoList[idx][event.target.name] = event.target.value
-        formFields.materialInfoList[idx].count = idx + 1
+        if(formFields.materialInfoList[idx] && formFields.materialInfoList[idx].assetRowId){
+            formFields.materialInfoList[idx].assetRowId = formFields.materialInfoList[idx].assetRowId
+        } else {
+                formFields.materialInfoList[idx].assetRowId = 0
+        }
 
         this.setState({ formFields })
         console.log('countcheck', formFields)
@@ -2081,8 +2109,13 @@ class FixtureInstaller extends React.Component {
                 formFields.materialInfoList.map(item => {
                     
                     this.props.storeDrpdwns.materialInfo.map(exitingvalue => {
-                        // console.log('item.proposedInstallationDate', item.proposedInstallationDate)
-                        // console.log('item.proposedInstallationDate', exitingvalue.proposedInstallationDate)
+                        // console.log('existingvalue', exitingvalue)
+                        // console.log('item', item)
+                        exitingvalue.proposedInstallationDate = exitingvalue.proposedInstallationDate.split('T')[0]
+                        exitingvalue.actualInstallationDate = exitingvalue.actualInstallationDate.split('T')[0]
+
+                        console.log('item.proposedInstallationDate', item.proposedInstallationDate)
+                        console.log('item.proposedInstallationDate', exitingvalue.proposedInstallationDate)
                         if (exitingvalue.model === item.model && exitingvalue.sku === item.sku && exitingvalue.fixtureDescription === item.fixtureDescription && exitingvalue.assetTagId === item.assetTagId && exitingvalue.status === item.status && exitingvalue.installerName === item.installerName && exitingvalue.installerContact === item.installerContact && exitingvalue.installerPhone === item.installerPhone && exitingvalue.actualInstallationDate === item.actualInstallationDate && exitingvalue.proposedInstallationDate === item.proposedInstallationDate) {
 
                             indexchangevalues.push('false')
@@ -2099,6 +2132,9 @@ class FixtureInstaller extends React.Component {
                 if (indexchangevalues.includes('false')) {
                     for (let i = this.props.storeDrpdwns.materialInfo.length; i < formFields.materialInfoList.length; i++) {
                         if (formFields.materialInfoList[i].assetTagId && !formFields.materialInfoList[i].existingrecord && formFields.materialInfoList[i].assetTagId != "") {
+
+
+                            console.log('ifcondition')
 
                             const url = endPoints.storeInfo.checkAssetId + "?Assettagid=" + formFields.materialInfoList[i].assetTagId
                             await axios.get(url).then(response => {
@@ -2131,9 +2167,10 @@ class FixtureInstaller extends React.Component {
                     }
                    
                 } else {
+                    console.log('elsecondition')
                     for (let i = 0; i < formFields.materialInfoList.length; i++) {
                         if (formFields.materialInfoList[i].assetTagId && !formFields.materialInfoList[i].existingrecord  && formFields.materialInfoList[i].assetTagId != "") {
-
+                            console.log('elsecondition')
                             const url = endPoints.storeInfo.checkAssetId + "?Assettagid=" + formFields.materialInfoList[i].assetTagId
                             await axios.get(url).then(response => {
 
@@ -2893,7 +2930,7 @@ class FixtureInstaller extends React.Component {
             console.log('fixturedescriptionforexisting', materialInfoList)
 
        
-        console.log('materiallist', formFields)
+        console.log('materiallist', formFields.materialInfoList)
 
 
         // console.log("listmaterial", formFields.materialInfoList[1].fixtureDescription)
@@ -3236,15 +3273,17 @@ class FixtureInstaller extends React.Component {
 
 
                                                     >
-                                                        {formFields.materialInfoList[idx].fixturesforexisting && formFields.materialInfoList[idx].fixturesforexisting.length > 0 ? <div> { formFields.materialInfoList[idx].fixtureOptions && formFields.materialInfoList[idx].fixtureOptions.length > 0 && formFields.materialInfoList[idx].fixturesforexisting.map((data) => {
+                                                        {/* {formFields.materialInfoList[idx].fixturesforexisting && formFields.materialInfoList[idx].fixturesforexisting.length > 0 ? <div> { formFields.materialInfoList[idx].fixtureOptions && formFields.materialInfoList[idx].fixtureOptions.length > 0 && formFields.materialInfoList[idx].fixturesforexisting.map((data) => {
                                                             return (
                                                                 <MenuItem value={data}>{data}</MenuItem>
                                                             )
-                                                        })}</div> : <div> { formFields.materialInfoList[idx].fixtureOptions && formFields.materialInfoList[idx].fixtureOptions.length > 0 && formFields.materialInfoList[idx].fixtureOptions.map((data) => {
+                                                        })}</div> : <div>  */}
+                                                        { formFields.materialInfoList[idx].fixtureOptions && formFields.materialInfoList[idx].fixtureOptions.length > 0 && formFields.materialInfoList[idx].fixtureOptions.map((data) => {
                                                             return (
                                                                 <MenuItem value={data}>{data}</MenuItem>
                                                             )
-                                                        })}</div>}
+                                                        })}
+                                                        {/* </div>} */}
                                                     </Select>
 
                                                     {(userDetails.role === "Country Lead") && this.materialInfoValidator.message('sku', formFields.materialInfoList[idx].sku, 'requiredText')}
@@ -3271,7 +3310,16 @@ class FixtureInstaller extends React.Component {
                                                         className={formFields.materialInfoList[idx].colorchange ? "materialDesc4" : "materialDesc1"}
 
                                                     >
-                                                        {formFields.materialInfoList[idx].fixturedescriptionforexisting && formFields.materialInfoList[idx].fixtureDescOptions && formFields.materialInfoList[idx].fixtureDescOptions.length > 0 && formFields.materialInfoList[idx].fixturedescriptionforexisting.map((data) => {
+                                                        {/* {formFields.materialInfoList[idx].fixturedescriptionforexisting && formFields.materialInfoList[idx].fixturedescriptionforexisting.length > 0 ? <div> { formFields.materialInfoList[idx].fixtureDescOptions && formFields.materialInfoList[idx].fixtureDescOptions.length > 0 && formFields.materialInfoList[idx].fixturedescriptionforexisting.map((data) => {
+                                                            return (
+                                                                <MenuItem value={data}>{data}</MenuItem>
+                                                            )
+                                                        })}</div> : <div> { formFields.materialInfoList[idx].fixtureDescOptions && formFields.materialInfoList[idx].fixtureDescOptions.length > 0 && formFields.materialInfoList[idx].fixtureDescOptions.map((data) => {
+                                                            return (
+                                                                <MenuItem value={data}>{data}</MenuItem>
+                                                            )
+                                                        })}</div>} */}
+                                                        {formFields.materialInfoList[idx].fixtureDescOptions && formFields.materialInfoList[idx].fixtureDescOptions.length > 0 && formFields.materialInfoList[idx].fixtureDescOptions.map((data) => {
                                                             return (
                                                                 <MenuItem value={data}>{data}</MenuItem>
                                                             )

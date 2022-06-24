@@ -39,9 +39,9 @@ authentication.initialize({
   clientId: '40dc7e8d-9e77-462d-bb4f-44d32ed0a73e',
   cacheLocation: 'sessionStorage',
   scopes: ['https://msftinstoreexperience.onmicrosoft.com/tasks-api/tasks.read'],
-  // redirectUri: 'https://msftccmfixture.azurewebsites.net/',
+  redirectUri: 'https://msftccmfixture.azurewebsites.net/',
   // redirectUri: 'https://msftapp.azurewebsites.net/',
-  redirectUri: 'http://localhost:3000/',
+  // redirectUri: 'http://localhost:3000/',
   postLogoutRedirectUri: window.location.origin,
   storeAuthStateInCookie: true
 

@@ -61,7 +61,7 @@ export const checkGlId = (glid) => async dispatch => {
 
                     console.log('responsefixtures', responsefixtures)
 
-                    dispatch({ type: "GLID_AVAIL", payload: { repTool: false, storeError: true, result: res.data.resultquery, executionResult: res.data.executionResult, fixedSelection: res.data.fixedSelection, graphicsLanguage: res.data.graphicsLanguage, model: res.data.model, status: res.data.status, fixtures: res.data.fixtures, glidvalues: res.data.glid, fixturedescriptionforexisting: arrayforfixturedescription ? arrayforfixturedescription : [],  fixturesforexisting: responsefixtures.data ? responsefixtures.data : [] , fixtureDescription: res.data.fixturesDescription ? res.data.fixturesDescription : [], materialInfo: res.data.materialInfo ? res.data.materialInfo : [] } })
+                    dispatch({ type: "GLID_AVAIL", payload: { repTool: false, storeError: true, result: res.data.resultquery, executionResult: res.data.executionResult, fixedSelection: res.data.fixedSelection, graphicsLanguage: res.data.graphicsLanguage, model: res.data.model, status: res.data.status, fixtures: res.data.fixtures, glidvalues: res.data.glid, fixturedescriptionforexisting: arrayforfixturedescription ? arrayforfixturedescription : [], assetRowId: res.assetRowId, fixturesforexisting: responsefixtures.data ? responsefixtures.data : [] , fixtureDescription: res.data.fixturesDescription ? res.data.fixturesDescription : [], materialInfo: res.data.materialInfo ? res.data.materialInfo : [] } })
 
 
                 }
@@ -167,6 +167,7 @@ export const addStore = (Glid, data1, data2, storeData, listofAdmins) => async d
     let PrevAssetValues = data2.materialInfoList.map(d => (d.previousAssetTag !== "" && d.previousAssetTag !== undefined) ? d.previousAssetTag : "null")
 
     console.log("prevset", PrevAssetValues)
+    let assetRowId = data2.materialInfoList.map(d => d.assetRowId !== "" ? d.assetRowId : "null")
 
     let FixtureValues = data2.materialInfoList.map(d => d.fixtureCost !== "" ? d.fixtureCost : "null")
 
@@ -216,6 +217,21 @@ export const addStore = (Glid, data1, data2, storeData, listofAdmins) => async d
     let role = sessionStorage.getItem("userRoleDetail")
     let userDetails = JSON.parse(sessionStorage.getItem("userDetails"))
 
+    let lasteditasset = []
+    console.log('lasteditasset2',data2.materialInfoList.length)
+    data2.materialInfoList.map((d, index) => {
+        console.log('lasteditasset2', index)
+     if(data2.materialInfoList.length - 1 === index){
+        lasteditasset.push(1)
+} else {
+    lasteditasset.push(0)
+}
+ })
+
+ let lasteditasset2 = lasteditasset.length > 0 ? lasteditasset.map(d => d) : ""
+
+ console.log('lasteditasset2', lasteditasset2)
+
     
 
     // emailjs.send('service_oz3rurt', 'template_un4jnox', templateParams, 'user_bNTtSlTQS5MCCm62EgOYV')
@@ -231,7 +247,7 @@ export const addStore = (Glid, data1, data2, storeData, listofAdmins) => async d
     try {
         let url = endPoints.storeInfo.addStore + "?ExecutionTier=" + `${data1.floorPlan.executionResult}` + "&SubPmname=" + `${data1.floorPlan.subpm}` + "&FixedSelection=" + `${data1.floorPlan.fixedSelection}` + "&BackwallCustomSpecifications=" + `${data1.floorPlan.BackwallCustomSpecifications}` + "&SpecialRequests=" + `${data1.floorPlan.SpecialRequests}` + "&GraphicsLanguage=" + `${data1.floorPlan.GraphicsLanguage}` + "&DeliveryAddress=" + `${data2.deliveryAddress}` + "&DeliveryCity=" + `${data2.deliveryCity}` + "&Comments=" + `${data2.Comments}` + "&DeliveryState=" + `${data2.deliveryState}` + "&DeliveryZip=" + `${data2.deliveryZip}` + "&glid=" + `${Glid}` + "&Glid=" +
             `${Glid}` + "&Updatedby=" + `${userDetails.email}` + "&UpdatedbyUser=" + `${userDetails.name}` + "&Role=" + `${role}` + "&Model=" + `${ModelValue}` + "&Sku=" + `${encodeURIComponent(SkuValue)}` + "&AssetTagId=" + `${AssetTagValues}` + "&PreviousAssetTag=" +
-            `${PrevAssetValues}` + "&FixtureCost=" + `${FixtureValues}` + "&Status=" + `${StatusValues}` + "&FixtureDescription=" + `${encodeURIComponent(FixtureDescValue)}` +
+            `${PrevAssetValues}` + "&FixtureCost=" + `${FixtureValues}` + "&Status=" + `${StatusValues}` + "&FixtureDescription=" + `${encodeURIComponent(FixtureDescValue)}` + "&assetRowId=" + `${assetRowId}` + "&LastAssetFlag=" + `${lasteditasset2}` +
             "&InstallerName=" + `${InstallerValues}` + "&InstallerContact=" + `${InstallerContactValues}` + "&Phoneno=" + `${InstallerPhoneValues}` +"&Systemupdateddate="+ `${utctimeformat}` + "&Picofspacelink=" + `${Picofspacelink}` + "&_2dlink=" + `${_2dlink}` + "&_3dRlink=" + `${_3dRlink}` + "&Quadlink=" + `${Quadlink}` + "&Floorplanlink=" + `${Floorplanlink}` + "&Installationimagelink=" + `${Installationlink}` + "&siganturelink=" + `${SignatureLink}` + "&HeroShotimagelink=" +`${heroshotLink}` + "&MainFrontimagelink=" + `${MainfrontLink}` + "&LeftFrontimagelink=" + `${LeftfrontLink}` + "&RightFrontimagelink=" + `${RightfrontLink}`  + "&BestSideimagelink=" + `${BestsideLink}` + "&MainRearimagelink=" + `${MainrearLink}`
             + "&ActualInstallationDate=" + `${ActualDateValues}` + "&ProposedInstallationDate=" + `${ProposedDateValues}` + "&ResetFlag=" + `${keyName}` 
 
